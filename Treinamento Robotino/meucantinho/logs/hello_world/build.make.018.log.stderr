@@ -1,0 +1,36 @@
+[01m[K/home/gabriel/meucantinho/src/hello_world/src/desvia.cpp:[m[K In function ‘[01m[Kvoid dist(const ConstPtr&)[m[K’:
+[01m[K/home/gabriel/meucantinho/src/hello_world/src/desvia.cpp:19:12:[m[K [01;31m[Kerror: [m[Kincompatible types in assignment of ‘[01m[Kconst _points_type {aka const std::vector<geometry_msgs::Point32_<std::allocator<void> >, std::allocator<geometry_msgs::Point32_<std::allocator<void> > > >}[m[K’ to ‘[01m[Kgeometry_msgs::Point32 [9] {aka geometry_msgs::Point32_<std::allocator<void> > [9]}[m[K’
+  distancia = sensor->points;
+[01;32m[K            ^[m[K
+[01m[K/home/gabriel/meucantinho/src/hello_world/src/desvia.cpp:[m[K At global scope:
+[01m[K/home/gabriel/meucantinho/src/hello_world/src/desvia.cpp:22:5:[m[K [01;35m[Kwarning: [m[Ksecond argument of ‘[01m[Kint main(int, char***)[m[K’ should be ‘[01m[Kchar **[m[K’ [-Wmain]
+ int main(int argc, char **argv[]){
+[01;32m[K     ^[m[K
+[01m[K/home/gabriel/meucantinho/src/hello_world/src/desvia.cpp:[m[K In function ‘[01m[Kint main(int, char***)[m[K’:
+[01m[K/home/gabriel/meucantinho/src/hello_world/src/desvia.cpp:23:32:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kinit(int&, char***&, const char [7])[m[K’
+  ros::init(argc, argv, "desvia");
+[01;32m[K                                ^[m[K
+In file included from [01m[K/opt/ros/kinetic/include/ros/node_handle.h:47:0[m[K,
+                 from [01m[K/opt/ros/kinetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/gabriel/meucantinho/src/hello_world/src/desvia.cpp:1[m[K:
+[01m[K/opt/ros/kinetic/include/ros/init.h:83:18:[m[K [01;36m[Knote: [m[Kcandidate: void ros::init(int&, char**, const string&, uint32_t)
+ ROSCPP_DECL void init(int &argc, char **argv, const std::string& name, uint32_t options = 0);
+[01;32m[K                  ^[m[K
+[01m[K/opt/ros/kinetic/include/ros/init.h:83:18:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[Kchar***[m[K’ to ‘[01m[Kchar**[m[K’
+In file included from [01m[K/opt/ros/kinetic/include/ros/node_handle.h:47:0[m[K,
+                 from [01m[K/opt/ros/kinetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/gabriel/meucantinho/src/hello_world/src/desvia.cpp:1[m[K:
+[01m[K/opt/ros/kinetic/include/ros/init.h:93:18:[m[K [01;36m[Knote: [m[Kcandidate: void ros::init(const M_string&, const string&, uint32_t)
+ ROSCPP_DECL void init(const M_string& remappings, const std::string& name, uint32_t options = 0);
+[01;32m[K                  ^[m[K
+[01m[K/opt/ros/kinetic/include/ros/init.h:93:18:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Kconst M_string& {aka const std::map<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >&}[m[K’
+[01m[K/opt/ros/kinetic/include/ros/init.h:103:18:[m[K [01;36m[Knote: [m[Kcandidate: void ros::init(const VP_string&, const string&, uint32_t)
+ ROSCPP_DECL void init(const VP_string& remapping_args, const std::string& name, uint32_t options = 0);
+[01;32m[K                  ^[m[K
+[01m[K/opt/ros/kinetic/include/ros/init.h:103:18:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Kconst VP_string& {aka const std::vector<std::pair<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> > >&}[m[K’
+[01m[K/home/gabriel/meucantinho/src/hello_world/src/desvia.cpp:39:3:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kvel_y[m[K’
+   vel_y = offS1 * distancia[1].x + offS2 * distancia[2].x - offS8 * distancia[8].x - offS7 * distancia[7].x;
+[01;32m[K   ^[m[K
+make[2]: *** [CMakeFiles/desvia_node.dir/src/desvia.cpp.o] Error 1
+make[1]: *** [CMakeFiles/desvia_node.dir/all] Error 2
+make: *** [all] Error 2

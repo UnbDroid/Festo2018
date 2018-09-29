@@ -1,0 +1,10 @@
+[01m[K/home/gabriel/meucantinho/src/hello_world/src/desvia.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/gabriel/meucantinho/src/hello_world/src/desvia.cpp:45:25:[m[K [01;31m[Kerror: [m[K‘[01m[KdistanciaXX[m[K’ was not declared in this scope
+   vel_x = VMed - offx * distanciaXX[0] - offDiag * distanciaX[8] - offDiag * distanciaX[1];
+[01;32m[K                         ^[m[K
+[01m[K/home/gabriel/meucantinho/src/hello_world/src/desvia.cpp:50:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kdistancia[m[K’ was not declared in this scope
+   if((distancia[4].x < 0.45 && distancia[4].x !=0) || (distancia[5].x < 0.45 && distancia[5].x !=0)) vel_x = 0.0;
+[01;32m[K       ^[m[K
+make[2]: *** [CMakeFiles/desvia_node.dir/src/desvia.cpp.o] Error 1
+make[1]: *** [CMakeFiles/desvia_node.dir/all] Error 2
+make: *** [all] Error 2

@@ -1,0 +1,4 @@
+[35m[1mScanning dependencies of target desvia_node[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/desvia_node.dir/src/desvia.cpp.o[0m
+[100%] [32m[1mLinking CXX executable /home/gabriel/meucantinho/devel/.private/hello_world/lib/hello_world/desvia_node[0m
+[100%] Built target desvia_node

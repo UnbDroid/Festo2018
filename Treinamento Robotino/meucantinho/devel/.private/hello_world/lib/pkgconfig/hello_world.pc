@@ -1,0 +1,8 @@
+prefix=/home/gabriel/meucantinho/devel/.private/hello_world
+
+Name: hello_world
+Description: Description of hello_world
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/gabriel/meucantinho/devel/.private/hello_world/lib 
+Requires: 

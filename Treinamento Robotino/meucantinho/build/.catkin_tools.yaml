@@ -1,0 +1,6 @@
+devel_space: /home/gabriel/meucantinho/devel
+install: false
+install_space: /home/gabriel/meucantinho/install
+profile: default
+source_space: /home/gabriel/meucantinho/src
+workspace: /home/gabriel/meucantinho

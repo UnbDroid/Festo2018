@@ -1,0 +1,7 @@
+[01m[K/home/gabriel/meucantinho/src/hello_world/src/desvia.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/gabriel/meucantinho/src/hello_world/src/desvia.cpp:42:3:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kvel_y[m[K’
+   vel_y = offS1 * distancia[1].x + offS2 * distancia[2].x - offS8 * distancia[8].x - offS7 * distancia[7].x;
+[01;32m[K   ^[m[K
+make[2]: *** [CMakeFiles/desvia_node.dir/src/desvia.cpp.o] Error 1
+make[1]: *** [CMakeFiles/desvia_node.dir/all] Error 2
+make: *** [all] Error 2
