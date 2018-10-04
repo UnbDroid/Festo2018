@@ -1,0 +1,6 @@
+devel_space: /home/luan/catkin_dir/hello_world/devel
+install: false
+install_space: /home/luan/catkin_dir/hello_world/install
+profile: default
+source_space: /home/luan/catkin_dir/hello_world/src
+workspace: /home/luan/catkin_dir/hello_world

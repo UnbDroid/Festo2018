@@ -1,0 +1,11 @@
+[31m[1mCMake Error[0m at /home/luan/competicao_workshop/src/desafio/CMakeLists.txt:138 (add_executable):
+  Cannot find source file:
+
+    src/desafio.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .m .M .mm .h .hh .h++ .hm .hpp
+  .hxx .in .txx
+
+
+CMake Error: CMake can not determine linker language for target: resolucao_node
+CMake Error: Cannot determine link language for target "resolucao_node".

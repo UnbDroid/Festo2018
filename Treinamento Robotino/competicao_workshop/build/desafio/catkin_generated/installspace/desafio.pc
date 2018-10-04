@@ -1,0 +1,8 @@
+prefix=/home/luan/competicao_workshop/install
+
+Name: desafio
+Description: Description of desafio
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/luan/competicao_workshop/install/lib 
+Requires: 

@@ -1,0 +1,12 @@
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:3:9:[m[K [01;31m[Kerror: [m[K#include expects "FILENAME" or <FILENAME>
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:10:24:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs[m[K’ does not name a type
+ void dist_sensor(const sensor_msgs::PointCloud::ConstPtr& dists){
+[01;32m[K                        ^[m[K
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:10:47:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+ void dist_sensor(const sensor_msgs::PointCloud::ConstPtr& dists){
+[01;32m[K                                               ^[m[K
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:10:47:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:10:47:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K::[m[K’ token
+make[2]: *** [CMakeFiles/resolucao_node.dir/src/resolucao.cpp.o] Error 1
+make[1]: *** [CMakeFiles/resolucao_node.dir/all] Error 2
+make: *** [all] Error 2

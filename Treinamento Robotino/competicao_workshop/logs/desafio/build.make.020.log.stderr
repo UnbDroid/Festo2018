@@ -1,0 +1,14 @@
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:[m[K In function ‘[01m[Kvoid dist_sensor(const ConstPtr&)[m[K’:
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:16:2:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontrole[m[K’ was not declared in this scope
+  controle.publish(vel);
+[01;32m[K  ^[m[K
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:31:4:[m[K [01;31m[Kerror: [m[K‘[01m[Kvel[m[K’ was not declared in this scope
+    vel.linear.x = 0.1;
+[01;32m[K    ^[m[K
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:33:4:[m[K [01;31m[Kerror: [m[K‘[01m[Kvel[m[K’ was not declared in this scope
+    vel.linear.x = 0.0;
+[01;32m[K    ^[m[K
+make[2]: *** [CMakeFiles/resolucao_node.dir/src/resolucao.cpp.o] Error 1
+make[1]: *** [CMakeFiles/resolucao_node.dir/all] Error 2
+make: *** [all] Error 2

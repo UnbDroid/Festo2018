@@ -1,0 +1,7 @@
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:34:9:[m[K [01;31m[Kerror: [m[Kinvalid conversion from ‘[01m[Kchar**[m[K’ to ‘[01m[Kchar[m[K’ [-fpermissive]
+  **vptr = argv;
+[01;32m[K         ^[m[K
+make[2]: *** [CMakeFiles/resolucao_node.dir/src/resolucao.cpp.o] Error 1
+make[1]: *** [CMakeFiles/resolucao_node.dir/all] Error 2
+make: *** [all] Error 2

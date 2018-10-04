@@ -1,0 +1,1 @@
+/home/luan/catkin_dir/hello_world/devel/.private/catkin_tools_prebuild/env.sh

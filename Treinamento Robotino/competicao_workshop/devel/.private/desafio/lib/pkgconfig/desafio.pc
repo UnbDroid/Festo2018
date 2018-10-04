@@ -1,0 +1,8 @@
+prefix=/home/luan/competicao_workshop/devel/.private/desafio
+
+Name: desafio
+Description: Description of desafio
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/luan/competicao_workshop/devel/.private/desafio/lib 
+Requires: 

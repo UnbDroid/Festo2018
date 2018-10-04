@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/luan/catkin_dir/hello_world/install/setup.sh

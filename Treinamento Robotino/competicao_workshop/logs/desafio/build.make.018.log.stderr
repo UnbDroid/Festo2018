@@ -1,0 +1,14 @@
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:11:13:[m[K [01;31m[Kerror: [m[Kdeclaration of ‘[01m[Kvptr[m[K’ as multidimensional array must have bounds for all dimensions except the first
+ char vptr[][];
+[01;32m[K             ^[m[K
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:[m[K In function ‘[01m[Kvoid dist_sensor(const ConstPtr&)[m[K’:
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:19:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kvptr[m[K’ was not declared in this scope
+  ros::init(num, vptr, "resolucao");
+[01;32m[K                 ^[m[K
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:35:2:[m[K [01;31m[Kerror: [m[K‘[01m[Kvptr[m[K’ was not declared in this scope
+  vptr = argv;
+[01;32m[K  ^[m[K
+make[2]: *** [CMakeFiles/resolucao_node.dir/src/resolucao.cpp.o] Error 1
+make[1]: *** [CMakeFiles/resolucao_node.dir/all] Error 2
+make: *** [all] Error 2

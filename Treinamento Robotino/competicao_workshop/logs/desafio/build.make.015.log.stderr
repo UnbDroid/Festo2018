@@ -1,0 +1,16 @@
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:11:8:[m[K [01;31m[Kerror: [m[K‘[01m[Kvptr[m[K’ declared as reference but not initialized
+ char&& vptr;
+[01;32m[K        ^[m[K
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:[m[K In function ‘[01m[Kvoid dist_sensor(const ConstPtr&)[m[K’:
+[01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:19:34:[m[K [01;31m[Kerror: [m[Kinvalid conversion from ‘[01m[Kchar[m[K’ to ‘[01m[Kchar**[m[K’ [-fpermissive]
+  ros::init(num, vptr, "resolucao");
+[01;32m[K                                  ^[m[K
+In file included from [01m[K/opt/ros/kinetic/include/ros/node_handle.h:47:0[m[K,
+                 from [01m[K/opt/ros/kinetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/luan/competicao_workshop/src/desafio/src/resolucao.cpp:1[m[K:
+[01m[K/opt/ros/kinetic/include/ros/init.h:83:18:[m[K [01;36m[Knote: [m[K  initializing argument 2 of ‘[01m[Kvoid ros::init(int&, char**, const string&, uint32_t)[m[K’
+ ROSCPP_DECL void init(int &argc, char **argv, const std::string& name, uint32_t options = 0);
+[01;32m[K                  ^[m[K
+make[2]: *** [CMakeFiles/resolucao_node.dir/src/resolucao.cpp.o] Error 1
+make[1]: *** [CMakeFiles/resolucao_node.dir/all] Error 2
+make: *** [all] Error 2

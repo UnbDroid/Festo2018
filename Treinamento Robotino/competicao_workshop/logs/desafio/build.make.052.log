@@ -1,0 +1,4 @@
+[35m[1mScanning dependencies of target resolucao_node[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/resolucao_node.dir/src/resolucao.cpp.o[0m
+[100%] [32m[1mLinking CXX executable /home/luan/competicao_workshop/devel/.private/desafio/lib/desafio/resolucao_node[0m
+[100%] Built target resolucao_node
