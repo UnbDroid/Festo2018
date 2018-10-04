@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "robotino_msgs")
+set(robotino_msgs_MAINTAINER "Suraj Nair <suraj.nair@tum-create.edu.sg>, Aravind V <aravind.v@tum-create.edu.sg>")
+set(robotino_msgs_DEPRECATED "")
+set(robotino_msgs_VERSION "0.1.0")
+set(robotino_msgs_BUILD_DEPENDS "geometry_msgs" "message_generation" "roscpp" "roslib" "std_msgs")
+set(robotino_msgs_RUN_DEPENDS "message_runtime" "geometry_msgs" "roscpp" "roslib" "std_msgs")
+set(robotino_msgs_BUILDTOOL_DEPENDS "catkin")

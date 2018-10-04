@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "robotino_description")
+set(robotino_description_MAINTAINER "Suraj Nair <suraj.nair@tum-create.edu.sg>, Aravind V <aravind.v@tum-create.edu.sg>")
+set(robotino_description_DEPRECATED "")
+set(robotino_description_VERSION "0.1.0")
+set(robotino_description_BUILD_DEPENDS )
+set(robotino_description_RUN_DEPENDS )
+set(robotino_description_BUILDTOOL_DEPENDS "catkin")

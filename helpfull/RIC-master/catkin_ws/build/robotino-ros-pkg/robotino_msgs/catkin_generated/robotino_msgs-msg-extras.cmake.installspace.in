@@ -1,0 +1,2 @@
+set(robotino_msgs_MESSAGE_FILES "msg/AnalogReadings.msg;msg/EncoderReadings.msg;msg/MotorReadings.msg;msg/SetBHAPressures.msg;msg/BHAReadings.msg;msg/GrapplerReadings.msg;msg/NorthStarReadings.msg;msg/SetGrapplerAxes.msg;msg/DigitalReadings.msg;msg/GripperState.msg;msg/PowerReadings.msg;msg/SetGrapplerAxis.msg")
+set(robotino_msgs_SERVICE_FILES "srv/ResetOdometry.srv;srv/SetEncoderPosition.srv;srv/SetGripperState.srv")

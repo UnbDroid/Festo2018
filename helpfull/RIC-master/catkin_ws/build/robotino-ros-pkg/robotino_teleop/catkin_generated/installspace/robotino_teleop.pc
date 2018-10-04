@@ -1,0 +1,8 @@
+prefix=/home/simon/catkin_ws/install
+
+Name: robotino_teleop
+Description: Description of robotino_teleop
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/simon/catkin_ws/install/lib 
+Requires: 

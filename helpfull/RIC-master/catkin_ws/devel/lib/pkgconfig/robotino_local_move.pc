@@ -1,0 +1,8 @@
+prefix=/home/simon/catkin_ws/devel
+
+Name: robotino_local_move
+Description: Description of robotino_local_move
+Version: 0.1.0
+Cflags: -I/home/simon/catkin_ws/devel/include
+Libs: -L/home/simon/catkin_ws/devel/lib 
+Requires: actionlib actionlib_msgs geometry_msgs nav_msgs robotino_node std_msgs tf robotino_msgs

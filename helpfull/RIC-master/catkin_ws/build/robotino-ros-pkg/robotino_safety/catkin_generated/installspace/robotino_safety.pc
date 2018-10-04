@@ -1,0 +1,8 @@
+prefix=/home/simon/catkin_ws/install
+
+Name: robotino_safety
+Description: Description of robotino_safety
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/simon/catkin_ws/install/lib 
+Requires: geometry_msgs laser_geometry robotino_node sensor_msgs std_msgs tf visualization_msgs

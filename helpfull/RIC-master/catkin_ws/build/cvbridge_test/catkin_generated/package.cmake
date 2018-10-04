@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "cvbridge_test")
+set(cvbridge_test_MAINTAINER "simon <simon@todo.todo>")
+set(cvbridge_test_DEPRECATED "")
+set(cvbridge_test_VERSION "0.0.0")
+set(cvbridge_test_BUILD_DEPENDS "cv_bridge" "image_transport" "roscpp" "sensor_msgs" "std_msgs" "opencv2")
+set(cvbridge_test_RUN_DEPENDS "cv_bridge" "opencv2" "image_transport" "roscpp" "sensor_msgs" "std_msgs")
+set(cvbridge_test_BUILDTOOL_DEPENDS "catkin")

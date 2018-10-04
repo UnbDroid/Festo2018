@@ -1,0 +1,8 @@
+prefix=/home/simon/catkin_ws/devel
+
+Name: robotino_node
+Description: Description of robotino_node
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/simon/catkin_ws/devel/lib 
+Requires: image_transport nav_msgs robotino_msgs tf

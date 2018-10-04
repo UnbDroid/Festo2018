@@ -1,0 +1,8 @@
+prefix=/home/simon/catkin_ws/devel
+
+Name: motion_capture
+Description: Description of motion_capture
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/simon/catkin_ws/devel/lib 
+Requires: 

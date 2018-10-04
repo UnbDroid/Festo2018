@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "robotino_navigation")
+set(robotino_navigation_MAINTAINER "Suraj Nair <suraj.nair@tum-create.edu.sg>, Aravind V <aravind.v@tum-create.edu.sg>")
+set(robotino_navigation_DEPRECATED "")
+set(robotino_navigation_VERSION "0.1.0")
+set(robotino_navigation_BUILD_DEPENDS "robotino_node")
+set(robotino_navigation_RUN_DEPENDS "robotino_node")
+set(robotino_navigation_BUILDTOOL_DEPENDS "catkin")
