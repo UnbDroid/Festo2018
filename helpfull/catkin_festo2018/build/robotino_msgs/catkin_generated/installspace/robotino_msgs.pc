@@ -1,8 +1,0 @@
-prefix=/home/takashi/Desktop/catkin_festo2018/install
-
-Name: robotino_msgs
-Description: Description of robotino_msgs
-Version: 0.1.0
-Cflags: -I/home/takashi/Desktop/catkin_festo2018/install/include
-Libs: -L/home/takashi/Desktop/catkin_festo2018/install/lib 
-Requires: message_runtime geometry_msgs std_msgs

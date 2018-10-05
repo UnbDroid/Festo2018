@@ -1,1 +1,0 @@
-/home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_node/lib/python2.7/dist-packages/robotino_node/msg/_DigitalReadings.py

@@ -1,5 +1,0 @@
-robotino-ros-pkg/robotino_local_planner
-/home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_local_planner/lib/libRobotinoLocalPlanner.so /home/takashi/Desktop/catkin_festo2018/devel/lib/libRobotinoLocalPlanner.so
-/home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_local_planner/lib/pkgconfig/robotino_local_planner.pc /home/takashi/Desktop/catkin_festo2018/devel/lib/pkgconfig/robotino_local_planner.pc
-/home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_local_planner/share/robotino_local_planner/cmake/robotino_local_plannerConfig.cmake /home/takashi/Desktop/catkin_festo2018/devel/share/robotino_local_planner/cmake/robotino_local_plannerConfig.cmake
-/home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_local_planner/share/robotino_local_planner/cmake/robotino_local_plannerConfig-version.cmake /home/takashi/Desktop/catkin_festo2018/devel/share/robotino_local_planner/cmake/robotino_local_plannerConfig-version.cmake
