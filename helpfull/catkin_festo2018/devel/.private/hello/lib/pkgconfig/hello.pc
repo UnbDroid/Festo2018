@@ -1,0 +1,8 @@
+prefix=/home/takashi/Desktop/catkin_festo2018/devel/.private/hello
+
+Name: hello
+Description: Description of hello
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/takashi/Desktop/catkin_festo2018/devel/.private/hello/lib 
+Requires: 

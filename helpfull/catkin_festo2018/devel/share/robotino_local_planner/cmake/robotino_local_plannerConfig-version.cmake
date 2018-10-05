@@ -1,0 +1,1 @@
+/home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_local_planner/share/robotino_local_planner/cmake/robotino_local_plannerConfig-version.cmake

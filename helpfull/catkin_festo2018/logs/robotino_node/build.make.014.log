@@ -1,0 +1,27 @@
+[  0%] Built target _robotino_node_generate_messages_check_deps_EncoderReadings
+[  0%] Built target _robotino_node_generate_messages_check_deps_SetEncoderPosition
+[  0%] Built target _robotino_node_generate_messages_check_deps_ResetOdometry
+[  0%] Built target _robotino_node_generate_messages_check_deps_AnalogReadings
+[  0%] Built target _robotino_node_generate_messages_check_deps_PowerReadings
+[ 24%] Built target robotino_node
+[ 24%] Built target _robotino_node_generate_messages_check_deps_DigitalReadings
+[ 24%] Built target std_msgs_generate_messages_cpp
+[ 24%] Built target geometry_msgs_generate_messages_cpp
+[ 24%] Built target geometry_msgs_generate_messages_nodejs
+[ 24%] Built target std_msgs_generate_messages_nodejs
+[ 24%] Built target std_msgs_generate_messages_lisp
+[ 24%] Built target geometry_msgs_generate_messages_lisp
+[ 24%] Built target geometry_msgs_generate_messages_eus
+[ 24%] Built target std_msgs_generate_messages_eus
+[ 24%] Built target geometry_msgs_generate_messages_py
+[ 24%] Built target std_msgs_generate_messages_py
+[ 31%] Built target robotino_laserrangefinder_node
+[ 31%] Built target _robotino_node_generate_messages_check_deps_MotorReadings
+[ 38%] Built target robotino_odometry_node
+[ 45%] Built target robotino_camera_node
+[ 55%] Built target robotino_node_generate_messages_nodejs
+[ 77%] Built target robotino_node_generate_messages_cpp
+[ 78%] Built target robotino_node_generate_messages_py
+[ 88%] Built target robotino_node_generate_messages_lisp
+[100%] Built target robotino_node_generate_messages_eus
+[100%] Built target robotino_node_generate_messages

@@ -1,0 +1,8 @@
+prefix=/home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_local_planner
+
+Name: robotino_local_planner
+Description: Description of robotino_local_planner
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_local_planner/lib 
+Requires: 

@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/takashi/Desktop/catkin_festo2018/devel/.private/hello/setup.sh

@@ -1,0 +1,8 @@
+prefix=/home/takashi/Desktop/catkin_festo2018/devel/.private/image_subscriber
+
+Name: image_subscriber
+Description: Description of image_subscriber
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/takashi/Desktop/catkin_festo2018/devel/.private/image_subscriber/lib 
+Requires: 

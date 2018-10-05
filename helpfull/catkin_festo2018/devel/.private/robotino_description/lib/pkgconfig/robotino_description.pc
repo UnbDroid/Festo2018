@@ -1,0 +1,8 @@
+prefix=/home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_description
+
+Name: robotino_description
+Description: Description of robotino_description
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_description/lib 
+Requires: 

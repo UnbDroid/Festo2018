@@ -1,0 +1,1 @@
+/home/takashi/Desktop/catkin_festo2018/devel/.private/catkin_tools_prebuild/setup.sh

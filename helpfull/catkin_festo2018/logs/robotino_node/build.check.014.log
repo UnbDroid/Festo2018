@@ -1,0 +1,4 @@
+CMake Error: The source directory "/home/takashi/Desktop/catkin_festo2018/src/robotino_node" does not exist.
+Specify --help for usage, or press the help button on the CMake GUI.
+Makefile:2004: recipe for target 'cmake_check_build_system' failed
+make: *** [cmake_check_build_system] Error 1

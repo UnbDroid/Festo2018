@@ -1,0 +1,4 @@
+[35m[1mScanning dependencies of target RobotinoLocalPlanner[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/RobotinoLocalPlanner.dir/src/RobotinoLocalPlanner.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library /home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_local_planner/lib/libRobotinoLocalPlanner.so[0m
+[100%] Built target RobotinoLocalPlanner

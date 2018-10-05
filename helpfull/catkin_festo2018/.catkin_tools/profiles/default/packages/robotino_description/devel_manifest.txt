@@ -1,0 +1,4 @@
+robotino-ros-pkg/robotino_description
+/home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_description/lib/pkgconfig/robotino_description.pc /home/takashi/Desktop/catkin_festo2018/devel/lib/pkgconfig/robotino_description.pc
+/home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_description/share/robotino_description/cmake/robotino_descriptionConfig.cmake /home/takashi/Desktop/catkin_festo2018/devel/share/robotino_description/cmake/robotino_descriptionConfig.cmake
+/home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_description/share/robotino_description/cmake/robotino_descriptionConfig-version.cmake /home/takashi/Desktop/catkin_festo2018/devel/share/robotino_description/cmake/robotino_descriptionConfig-version.cmake

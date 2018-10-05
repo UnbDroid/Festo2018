@@ -1,0 +1,1 @@
+/home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_description/share/robotino_description/cmake/robotino_descriptionConfig-version.cmake

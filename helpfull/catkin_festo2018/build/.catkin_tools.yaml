@@ -1,0 +1,6 @@
+devel_space: /home/takashi/Desktop/catkin_festo2018/devel
+install: false
+install_space: /home/takashi/Desktop/catkin_festo2018/install
+profile: default
+source_space: /home/takashi/Desktop/catkin_festo2018/src
+workspace: /home/takashi/Desktop/catkin_festo2018

@@ -1,0 +1,100 @@
+[35m[1mScanning dependencies of target robotino_node[0m
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target _robotino_node_generate_messages_check_deps_EncoderReadings
+[  0%] Built target _robotino_node_generate_messages_check_deps_SetEncoderPosition
+[  0%] Built target _robotino_node_generate_messages_check_deps_AnalogReadings
+[  0%] Built target _robotino_node_generate_messages_check_deps_ResetOdometry
+[  0%] Built target _robotino_node_generate_messages_check_deps_PowerReadings
+[  0%] Built target _robotino_node_generate_messages_check_deps_DigitalReadings
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target geometry_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[  0%] Built target _robotino_node_generate_messages_check_deps_MotorReadings
+[  0%] Built target std_msgs_generate_messages_eus
+[  1%] [32mBuilding CXX object CMakeFiles/robotino_node.dir/src/robotino_node.cpp.o[0m
+[  1%] Built target geometry_msgs_generate_messages_eus
+[35m[1mScanning dependencies of target robotino_laserrangefinder_node[0m
+[  1%] Built target std_msgs_generate_messages_py
+[  1%] Built target geometry_msgs_generate_messages_py
+[35m[1mScanning dependencies of target robotino_camera_node[0m
+[35m[1mScanning dependencies of target robotino_odometry_node[0m
+[  2%] [32mBuilding CXX object CMakeFiles/robotino_node.dir/src/AnalogInputArrayROS.cpp.o[0m
+[  4%] [32mBuilding CXX object CMakeFiles/robotino_node.dir/src/BumperROS.cpp.o[0m
+[  5%] [34m[1mGenerating C++ code from robotino_node/PowerReadings.msg[0m
+[  7%] [32mBuilding CXX object CMakeFiles/robotino_laserrangefinder_node.dir/src/robotino_laserrangefinder_node.cpp.o[0m
+[  8%] [32mBuilding CXX object CMakeFiles/robotino_camera_node.dir/src/robotino_camera_node.cpp.o[0m
+[ 10%] [34m[1mGenerating Javascript code from robotino_node/PowerReadings.msg[0m
+[ 11%] [32mBuilding CXX object CMakeFiles/robotino_odometry_node.dir/src/robotino_odometry_node.cpp.o[0m
+[ 12%] [34m[1mGenerating Javascript code from robotino_node/EncoderReadings.msg[0m
+[ 14%] [34m[1mGenerating Javascript code from robotino_node/AnalogReadings.msg[0m
+[ 15%] [34m[1mGenerating Javascript code from robotino_node/MotorReadings.msg[0m
+[ 17%] [34m[1mGenerating C++ code from robotino_node/EncoderReadings.msg[0m
+[ 18%] [34m[1mGenerating Javascript code from robotino_node/DigitalReadings.msg[0m
+[ 20%] [34m[1mGenerating Javascript code from robotino_node/ResetOdometry.srv[0m
+[ 21%] [34m[1mGenerating Javascript code from robotino_node/SetEncoderPosition.srv[0m
+[ 21%] Built target robotino_node_generate_messages_nodejs
+[ 22%] [34m[1mGenerating C++ code from robotino_node/AnalogReadings.msg[0m
+[ 24%] [32mBuilding CXX object CMakeFiles/robotino_odometry_node.dir/src/ComROS.cpp.o[0m
+[ 25%] [34m[1mGenerating C++ code from robotino_node/MotorReadings.msg[0m
+[ 27%] [34m[1mGenerating C++ code from robotino_node/DigitalReadings.msg[0m
+[ 28%] [34m[1mGenerating C++ code from robotino_node/ResetOdometry.srv[0m
+[ 30%] [34m[1mGenerating C++ code from robotino_node/SetEncoderPosition.srv[0m
+[ 30%] Built target robotino_node_generate_messages_cpp
+[ 31%] [34m[1mGenerating Lisp code from robotino_node/PowerReadings.msg[0m
+[ 32%] [32mBuilding CXX object CMakeFiles/robotino_laserrangefinder_node.dir/src/ComROS.cpp.o[0m
+[ 34%] [34m[1mGenerating Lisp code from robotino_node/EncoderReadings.msg[0m
+[ 35%] [32mBuilding CXX object CMakeFiles/robotino_camera_node.dir/src/ComROS.cpp.o[0m
+[ 37%] [32mBuilding CXX object CMakeFiles/robotino_node.dir/src/CameraROS.cpp.o[0m
+[ 38%] [34m[1mGenerating Lisp code from robotino_node/AnalogReadings.msg[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/robotino_node.dir/src/ComROS.cpp.o[0m
+[ 41%] [34m[1mGenerating Lisp code from robotino_node/MotorReadings.msg[0m
+[ 42%] [34m[1mGenerating Lisp code from robotino_node/DigitalReadings.msg[0m
+[ 44%] [32mBuilding CXX object CMakeFiles/robotino_node.dir/src/DigitalInputArrayROS.cpp.o[0m
+[ 45%] [34m[1mGenerating Lisp code from robotino_node/ResetOdometry.srv[0m
+[ 47%] [34m[1mGenerating Lisp code from robotino_node/SetEncoderPosition.srv[0m
+[ 47%] Built target robotino_node_generate_messages_lisp
+[ 48%] [34m[1mGenerating EusLisp code from robotino_node/PowerReadings.msg[0m
+[ 50%] [34m[1mGenerating Python from MSG robotino_node/PowerReadings[0m
+[ 51%] [34m[1mGenerating EusLisp code from robotino_node/EncoderReadings.msg[0m
+[ 52%] [34m[1mGenerating EusLisp code from robotino_node/AnalogReadings.msg[0m
+[ 54%] [34m[1mGenerating Python from MSG robotino_node/EncoderReadings[0m
+[ 55%] [34m[1mGenerating EusLisp code from robotino_node/MotorReadings.msg[0m
+[ 57%] [34m[1mGenerating Python from MSG robotino_node/AnalogReadings[0m
+[ 58%] [34m[1mGenerating EusLisp code from robotino_node/DigitalReadings.msg[0m
+[ 60%] [34m[1mGenerating EusLisp code from robotino_node/ResetOdometry.srv[0m
+[ 61%] [34m[1mGenerating Python from MSG robotino_node/MotorReadings[0m
+[ 62%] [34m[1mGenerating EusLisp code from robotino_node/SetEncoderPosition.srv[0m
+[ 64%] [34m[1mGenerating Python from MSG robotino_node/DigitalReadings[0m
+[ 65%] Built target robotino_node_generate_messages_eus
+[ 67%] [34m[1mGenerating Python code from SRV robotino_node/ResetOdometry[0m
+[ 68%] [34m[1mGenerating Python code from SRV robotino_node/SetEncoderPosition[0m
+[ 70%] [32mBuilding CXX object CMakeFiles/robotino_odometry_node.dir/src/OdometryROS.cpp.o[0m
+[ 71%] [34m[1mGenerating Python msg __init__.py for robotino_node[0m
+[ 72%] [34m[1mGenerating Python srv __init__.py for robotino_node[0m
+[ 72%] Built target robotino_node_generate_messages_py
+[ 72%] Built target robotino_node_generate_messages
+[ 74%] [32mBuilding CXX object CMakeFiles/robotino_laserrangefinder_node.dir/src/LaserRangeFinderROS.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/robotino_odometry_node.dir/src/RobotinoOdometryNode.cpp.o[0m
+[ 77%] [32mBuilding CXX object CMakeFiles/robotino_laserrangefinder_node.dir/src/RobotinoLaserRangeFinderNode.cpp.o[0m
+[ 78%] [32mBuilding CXX object CMakeFiles/robotino_camera_node.dir/src/CameraROS.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/robotino_node.dir/src/DigitalOutputArrayROS.cpp.o[0m
+[ 81%] [32mBuilding CXX object CMakeFiles/robotino_node.dir/src/DistanceSensorArrayROS.cpp.o[0m
+[ 82%] [32mBuilding CXX object CMakeFiles/robotino_node.dir/src/ElectricalGripperROS.cpp.o[0m
+[ 84%] [32mBuilding CXX object CMakeFiles/robotino_node.dir/src/EncoderInputROS.cpp.o[0m
+[ 85%] [32m[1mLinking CXX executable /home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_node/lib/robotino_node/robotino_laserrangefinder_node[0m
+[ 87%] [32mBuilding CXX object CMakeFiles/robotino_camera_node.dir/src/RobotinoCameraNode.cpp.o[0m
+[ 87%] Built target robotino_laserrangefinder_node
+[ 88%] [32mBuilding CXX object CMakeFiles/robotino_node.dir/src/LaserRangeFinderROS.cpp.o[0m
+[ 90%] [32mBuilding CXX object CMakeFiles/robotino_node.dir/src/MotorArrayROS.cpp.o[0m
+[ 91%] [32mBuilding CXX object CMakeFiles/robotino_node.dir/src/OdometryROS.cpp.o[0m
+[ 92%] [32mBuilding CXX object CMakeFiles/robotino_node.dir/src/OmniDriveROS.cpp.o[0m
+[ 94%] [32mBuilding CXX object CMakeFiles/robotino_node.dir/src/PowerManagementROS.cpp.o[0m
+[ 95%] [32m[1mLinking CXX executable /home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_node/lib/robotino_node/robotino_odometry_node[0m
+[ 95%] Built target robotino_odometry_node
+[ 97%] [32mBuilding CXX object CMakeFiles/robotino_node.dir/src/RobotinoNode.cpp.o[0m
+[ 98%] [32m[1mLinking CXX executable /home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_node/lib/robotino_node/robotino_camera_node[0m
+[ 98%] Built target robotino_camera_node
+[100%] [32m[1mLinking CXX executable /home/takashi/Desktop/catkin_festo2018/devel/.private/robotino_node/lib/robotino_node/robotino_node[0m
+[100%] Built target robotino_node
