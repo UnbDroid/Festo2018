@@ -1,8 +1,0 @@
-Symlinking /home/luan/catkin_dir/hello_world/devel/./setup.zsh
-Symlinking /home/luan/catkin_dir/hello_world/devel/./setup.sh
-Symlinking /home/luan/catkin_dir/hello_world/devel/./_setup_util.py
-Symlinking /home/luan/catkin_dir/hello_world/devel/./env.sh
-Symlinking /home/luan/catkin_dir/hello_world/devel/./setup.bash
-Symlinking /home/luan/catkin_dir/hello_world/devel/lib/pkgconfig/catkin_tools_prebuild.pc
-Symlinking /home/luan/catkin_dir/hello_world/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
-Symlinking /home/luan/catkin_dir/hello_world/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake

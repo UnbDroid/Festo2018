@@ -1,8 +1,0 @@
-prefix=/home/simon/catkin_ws/install
-
-Name: robotino_local_planner
-Description: Description of robotino_local_planner
-Version: 0.1.0
-Cflags: 
-Libs: -L/home/simon/catkin_ws/install/lib 
-Requires: 

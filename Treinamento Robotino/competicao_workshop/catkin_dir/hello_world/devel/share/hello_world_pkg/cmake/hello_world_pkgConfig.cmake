@@ -1,1 +1,0 @@
-/home/luan/catkin_dir/hello_world/devel/.private/hello_world_pkg/share/hello_world_pkg/cmake/hello_world_pkgConfig.cmake

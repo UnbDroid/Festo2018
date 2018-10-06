@@ -1,6 +1,0 @@
-hello_world_pkg
-/home/luan/catkin_dir/hello_world/devel/.private/hello_world_pkg/lib/pkgconfig/hello_world_pkg.pc /home/luan/catkin_dir/hello_world/devel/lib/pkgconfig/hello_world_pkg.pc
-/home/luan/catkin_dir/hello_world/devel/.private/hello_world_pkg/lib/hello_world_pkg/publisher_node /home/luan/catkin_dir/hello_world/devel/lib/hello_world_pkg/publisher_node
-/home/luan/catkin_dir/hello_world/devel/.private/hello_world_pkg/lib/hello_world_pkg/subscriber_node /home/luan/catkin_dir/hello_world/devel/lib/hello_world_pkg/subscriber_node
-/home/luan/catkin_dir/hello_world/devel/.private/hello_world_pkg/share/hello_world_pkg/cmake/hello_world_pkgConfig.cmake /home/luan/catkin_dir/hello_world/devel/share/hello_world_pkg/cmake/hello_world_pkgConfig.cmake
-/home/luan/catkin_dir/hello_world/devel/.private/hello_world_pkg/share/hello_world_pkg/cmake/hello_world_pkgConfig-version.cmake /home/luan/catkin_dir/hello_world/devel/share/hello_world_pkg/cmake/hello_world_pkgConfig-version.cmake
