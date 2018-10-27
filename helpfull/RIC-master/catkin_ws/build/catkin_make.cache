@@ -1,2 +1,0 @@
-beginner_tutorials:cvbridge_test:image_subscriber:robotino-ros-pkg/robotino_description:robotino-ros-pkg/robotino_local_move:robotino-ros-pkg/robotino_local_planner:robotino-ros-pkg/robotino_msgs:robotino-ros-pkg/robotino_navigation:robotino-ros-pkg/robotino_node:robotino-ros-pkg/robotino_safety:robotino-ros-pkg/robotino_teleop
--DCATKIN_DEVEL_PREFIX=/home/simon/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/simon/catkin_ws/install -G Unix Makefiles

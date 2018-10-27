@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "image_subscriber")
-set(image_subscriber_MAINTAINER "simon <simon@todo.todo>")
-set(image_subscriber_DEPRECATED "")
-set(image_subscriber_VERSION "0.0.0")
-set(image_subscriber_BUILD_DEPENDS "cv_bridge" "image_transport" "opencv2")
-set(image_subscriber_RUN_DEPENDS "cv_bridge" "image_transport" "opencv2")
-set(image_subscriber_BUILDTOOL_DEPENDS "catkin")

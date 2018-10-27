@@ -1,6 +1,0 @@
-devel_space: /home/luan/competicao_workshop/devel
-install: false
-install_space: /home/luan/competicao_workshop/install
-profile: default
-source_space: /home/luan/competicao_workshop/src
-workspace: /home/luan/competicao_workshop

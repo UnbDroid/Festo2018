@@ -1,8 +1,0 @@
-prefix=/home/simon/catkin_ws/devel
-
-Name: robotino_navigation
-Description: Description of robotino_navigation
-Version: 0.1.0
-Cflags: 
-Libs: -L/home/simon/catkin_ws/devel/lib 
-Requires: 

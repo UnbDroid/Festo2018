@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "robotino_local_move")
-set(robotino_local_move_MAINTAINER "Suraj Nair <suraj.nair@tum-create.edu.sg>, Aravind V <aravind.v@tum-create.edu.sg>")
-set(robotino_local_move_DEPRECATED "")
-set(robotino_local_move_VERSION "0.1.0")
-set(robotino_local_move_BUILD_DEPENDS "actionlib" "actionlib_msgs" "geometry_msgs" "nav_msgs" "robotino_node" "std_msgs" "robotino_msgs" "tf" "message_generation")
-set(robotino_local_move_RUN_DEPENDS "actionlib" "actionlib_msgs" "geometry_msgs" "nav_msgs" "robotino_node" "robotino_msgs" "std_msgs" "tf" "message_runtime")
-set(robotino_local_move_BUILDTOOL_DEPENDS "catkin")

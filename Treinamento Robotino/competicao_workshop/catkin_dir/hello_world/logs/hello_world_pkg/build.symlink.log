@@ -1,5 +1,0 @@
-Linked: (/home/luan/catkin_dir/hello_world/devel/.private/hello_world_pkg/lib/pkgconfig/hello_world_pkg.pc, /home/luan/catkin_dir/hello_world/devel/lib/pkgconfig/hello_world_pkg.pc)
-Symlinking /home/luan/catkin_dir/hello_world/devel/lib/hello_world_pkg/publisher_node
-Symlinking /home/luan/catkin_dir/hello_world/devel/lib/hello_world_pkg/subscriber_node
-Linked: (/home/luan/catkin_dir/hello_world/devel/.private/hello_world_pkg/share/hello_world_pkg/cmake/hello_world_pkgConfig.cmake, /home/luan/catkin_dir/hello_world/devel/share/hello_world_pkg/cmake/hello_world_pkgConfig.cmake)
-Linked: (/home/luan/catkin_dir/hello_world/devel/.private/hello_world_pkg/share/hello_world_pkg/cmake/hello_world_pkgConfig-version.cmake, /home/luan/catkin_dir/hello_world/devel/share/hello_world_pkg/cmake/hello_world_pkgConfig-version.cmake)

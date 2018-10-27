@@ -1,8 +1,0 @@
-prefix=/home/luan/catkin_dir/hello_world/install
-
-Name: hello_world_pkg
-Description: Description of hello_world_pkg
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/luan/catkin_dir/hello_world/install/lib 
-Requires: 

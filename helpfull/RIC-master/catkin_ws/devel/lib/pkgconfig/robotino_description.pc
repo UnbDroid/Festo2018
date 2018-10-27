@@ -1,8 +1,0 @@
-prefix=/home/simon/catkin_ws/devel
-
-Name: robotino_description
-Description: Description of robotino_description
-Version: 0.1.0
-Cflags: 
-Libs: -L/home/simon/catkin_ws/devel/lib 
-Requires: 

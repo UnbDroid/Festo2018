@@ -1,8 +1,0 @@
-[35m[1mScanning dependencies of target publisher_node[0m
-[35m[1mScanning dependencies of target subscriber_node[0m
-[ 25%] [32mBuilding CXX object CMakeFiles/publisher_node.dir/src/falante.cpp.o[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/subscriber_node.dir/src/ouvinte.cpp.o[0m
-[ 75%] [32m[1mLinking CXX executable /home/luan/catkin_dir/hello_world/devel/.private/hello_world_pkg/lib/hello_world_pkg/publisher_node[0m
-[100%] [32m[1mLinking CXX executable /home/luan/catkin_dir/hello_world/devel/.private/hello_world_pkg/lib/hello_world_pkg/subscriber_node[0m
-[100%] Built target publisher_node
-[100%] Built target subscriber_node

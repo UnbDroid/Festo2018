@@ -1,9 +1,0 @@
-/home/luan/catkin_dir/hello_world/build/catkin_tools_prebuild
-/home/luan/catkin_dir/hello_world/devel/.private/catkin_tools_prebuild/setup.zsh /home/luan/catkin_dir/hello_world/devel/./setup.zsh
-/home/luan/catkin_dir/hello_world/devel/.private/catkin_tools_prebuild/setup.sh /home/luan/catkin_dir/hello_world/devel/./setup.sh
-/home/luan/catkin_dir/hello_world/devel/.private/catkin_tools_prebuild/_setup_util.py /home/luan/catkin_dir/hello_world/devel/./_setup_util.py
-/home/luan/catkin_dir/hello_world/devel/.private/catkin_tools_prebuild/env.sh /home/luan/catkin_dir/hello_world/devel/./env.sh
-/home/luan/catkin_dir/hello_world/devel/.private/catkin_tools_prebuild/setup.bash /home/luan/catkin_dir/hello_world/devel/./setup.bash
-/home/luan/catkin_dir/hello_world/devel/.private/catkin_tools_prebuild/lib/pkgconfig/catkin_tools_prebuild.pc /home/luan/catkin_dir/hello_world/devel/lib/pkgconfig/catkin_tools_prebuild.pc
-/home/luan/catkin_dir/hello_world/devel/.private/catkin_tools_prebuild/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake /home/luan/catkin_dir/hello_world/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
-/home/luan/catkin_dir/hello_world/devel/.private/catkin_tools_prebuild/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake /home/luan/catkin_dir/hello_world/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake

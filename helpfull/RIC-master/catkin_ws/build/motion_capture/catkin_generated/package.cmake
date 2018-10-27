@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "motion_capture")
-set(motion_capture_MAINTAINER "simon <simonsimon911@googlemail.com>")
-set(motion_capture_DEPRECATED "")
-set(motion_capture_VERSION "0.0.0")
-set(motion_capture_BUILD_DEPENDS "cv_bridge" "image_transport" "opencv2" "roscpp" "sensor_msgs" "std_msgs")
-set(motion_capture_RUN_DEPENDS "cv_bridge" "image_transport" "opencv2" "roscpp" "sensor_msgs" "std_msgs")
-set(motion_capture_BUILDTOOL_DEPENDS "catkin")
