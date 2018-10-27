@@ -1,0 +1,8 @@
+<launch>
+    <!-- rosrun xacro \-\-inorder xacro.py robotino.urdf.xacro > robotino.urdf -->
+
+    <!-- rosrun robotino_node robotino_node.launch hostname:=IPADDRESS_OF_ROBOTINO -->
+    <include file="$(find robotino_node)/launch/robotino_node.launch" >
+        <arg name="hostname" value="172.26.101.103" />
+    </include>
+</launch>
