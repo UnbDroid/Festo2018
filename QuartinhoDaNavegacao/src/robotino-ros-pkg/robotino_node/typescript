@@ -1,0 +1,185 @@
+Script started on Mi 15 Jun 2016 15:00:09 CEST
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkg/robotino_nodesebastian@Desktop12:~/catkin_ws/src/catkin-pkg/robotino_node$ man term[K[K[K[K[K[K[K[Ksvn status
+M       CMakeLists.txt
+?       Robotino_Node
+M       include/InitialPoseROS.h
+!       include/MappingROS.h
+!       include/NavGoalROS.h
+!       include/RobotinoMappingNode.h
+!       src/MappingROS.cpp
+!       src/NavGoalROS.cpp
+!       src/RobotinoMappingNode.cpp
+!       src/robotino_mapping_node.cpp
+?       typescript
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkg/robotino_nodesebastian@Desktop12:~/catkin_ws/src/catkin-pkg/robotino_node$ cd ..
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkgsebastian@Desktop12:~/catkin_ws/src/catkin-pkg$ find . -name "".","[1P"p"y"*.py"
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkgsebastian@Desktop12:~/catkin_ws/src/catkin-pkg$ rm sr[K[K[K[K[Kls
+[0m[01;34mrobotino_description[0m  [01;34mrobotino_local_planner[0m  [01;34mrobotino_navigation[0m  [01;34mrobotino_safety[0m
+[01;34mrobotino_local_move[0m   [01;34mrobotino_msgs[0m           [01;34mrobotino_node[0m        [01;34mrobotino_teleop[0m
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkgsebastian@Desktop12:~/catkin_ws/src/catkin-pkg$ cd robotino_node
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkg/robotino_nodesebastian@Desktop12:~/catkin_ws/src/catkin-pkg/robotino_node$ ls
+CMakeLists.txt  [0m[01;34minclude[0m  [01;34mlaunch[0m  package.xml  [01;34mRobotino_Node[0m  [01;34msrc[0m  typescript
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkg/robotino_nodesebastian@Desktop12:~/catkin_ws/src/catkin-pkg/robotino_node$ rm src/Com
+CompactBHAROS.cpp  ComROS.cpp         
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkg/robotino_nodesebastian@Desktop12:~/catkin_ws/src/catkin-pkg/robotino_node$ rm src/Com
+CompactBHAROS.cpp  ComROS.cpp         
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkg/robotino_nodesebastian@Desktop12:~/catkin_ws/src/catkin-pkg/robotino_node$ rm src/CompactBHAROS.cpp 
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkg/robotino_nodesebastian@Desktop12:~/catkin_ws/src/catkin-pkg/robotino_node$ rm src/CompactBHAROS.cpp [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ksrc/GrapplerROS.cpp 
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkg/robotino_nodesebastian@Desktop12:~/catkin_ws/src/catkin-pkg/robotino_node$ rm src/GrapplerROS.cpp [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KIni[K[K[KNorthStarROS.cpp 
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkg/robotino_nodesebastian@Desktop12:~/catkin_ws/src/catkin-pkg/robotino_node$ rm src/NorthStarROS.cpp [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kinclude/CompactBHAROS.h 
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkg/robotino_nodesebastian@Desktop12:~/catkin_ws/src/catkin-pkg/robotino_node$ rm include/CompactBHAROS.h [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KGrapplerROS.h 
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkg/robotino_nodesebastian@Desktop12:~/catkin_ws/src/catkin-pkg/robotino_node$ rm include/GrapplerROS.h [K[K[K[K[K[K[K[K[K[K[K[K[K[KNorthStarROS.h 
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkg/robotino_nodesebastian@Desktop12:~/catkin_ws/src/catkin-pkg/robotino_node$ rm include/NorthStarROS.h [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcd ..
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkgsebastian@Desktop12:~/catkin_ws/src/catkin-pkg$ cd ..
+]0;sebastian@Desktop12: ~/catkin_ws/srcsebastian@Desktop12:~/catkin_ws/src$ svn status
+svn: warning: W155007: '/home/sebastian/catkin_ws/src' is not a working copy
+]0;sebastian@Desktop12: ~/catkin_ws/srcsebastian@Desktop12:~/catkin_ws/src$ cd catkin-pkg/
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkgsebastian@Desktop12:~/catkin_ws/src/catkin-pkg$ svn status
+M       robotino_node/CMakeLists.txt
+?       robotino_node/Robotino_Node
+!       robotino_node/include/CompactBHAROS.h
+!       robotino_node/include/GrapplerROS.h
+M       robotino_node/include/InitialPoseROS.h
+!       robotino_node/include/MappingROS.h
+!       robotino_node/include/NavGoalROS.h
+!       robotino_node/include/NorthStarROS.h
+!       robotino_node/include/RobotinoMappingNode.h
+M       robotino_node/include/RobotinoNode.h
+!       robotino_node/src/CompactBHAROS.cpp
+!       robotino_node/src/GrapplerROS.cpp
+!       robotino_node/src/MappingROS.cpp
+!       robotino_node/src/NavGoalROS.cpp
+!       robotino_node/src/NorthStarROS.cpp
+!       robotino_node/src/RobotinoMappingNode.cpp
+M       robotino_node/src/RobotinoNode.cpp
+!       robotino_node/src/robotino_mapping_node.cpp
+?       robotino_node/typescript
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkgsebastian@Desktop12:~/catkin_ws/src/catkin-pkg$ svn 
+add         cl          export      log         pdel        proplist    revert
+annotate    cleanup     -h          ls          pedit       propset     rm
+auth        co          help        merge       pget        pset        status
+blame       commit      --help      mergeinfo   plist       relocate    switch
+cat         copy        import      mkdir       praise      remove      unlock
+changelist  cp          info        move        propdel     rename      update
+checkout    delete      list        mv          propedit    resolve     upgrade
+ci          diff        lock        patch       propget     resolved    --version
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkgsebastian@Desktop12:~/catkin_ws/src/catkin-pkg$ svn 
+add         cl          export      log         pdel        proplist    revert
+annotate    cleanup     -h          ls          pedit       propset     rm
+auth        co          help        merge       pget        pset        status
+blame       commit      --help      mergeinfo   plist       relocate    switch
+cat         copy        import      mkdir       praise      remove      unlock
+changelist  cp          info        move        propdel     rename      update
+checkout    delete      list        mv          propedit    resolve     upgrade
+ci          diff        lock        patch       propget     resolved    --version
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkgsebastian@Desktop12:~/catkin_ws/src/catkin-pkg$ svn log
+------------------------------------------------------------------------
+r3303 | suraj | 2015-07-08 08:18:14 +0200 (Mi, 08 Jul 2015) | 9 lines
+
+Fix reading of digital input data
+
++ Modify function definition of `DigitalInputArrayROS::valuesChangedEvent` to be
+the same as the virtual function defined in the API2 library so that it's
+called.
++ Modify the same function implementation to have the correct (data type)
+casting.
+
+
+------------------------------------------------------------------------
+r3176 | suraj | 2015-04-29 09:10:47 +0200 (Mi, 29 Apr 2015) | 3 lines
+
+Fix laser transform time issue in `robotino_safety:RobotinoSafety.cpp`.
+Cleanup launch files in `robotino_node`.
+
+------------------------------------------------------------------------
+r3121 | suraj | 2015-04-14 11:27:59 +0200 (Di, 14 Apr 2015) | 2 lines
+
+Update IP address in launch files to connect with control3d.
+
+------------------------------------------------------------------------
+r3113 | suraj | 2015-04-08 12:26:51 +0200 (Mi, 08 Apr 2015) | 3 lines
+
+Update `base_link` to `laser_link` tf values in `robotino_simple_node.launch`
+file.
+
+------------------------------------------------------------------------
+r3109 | suraj | 2015-04-02 09:09:54 +0200 (Do, 02 Apr 2015) | 4 lines
+
+Fix dependencies on message generation.
+Fix warnings on improper use of ROS_ERROR and ROS_INFO.
+(Patches from Karl Damkjær Hansen)
+
+------------------------------------------------------------------------
+r3088 | suraj | 2015-03-09 07:47:22 +0100 (Mo, 09 Mär 2015) | 2 lines
+
+Remove `fakelaser.launch`
+
+------------------------------------------------------------------------
+r3087 | suraj | 2015-03-09 06:57:59 +0100 (Mo, 09 Mär 2015) | 2 lines
+
+Initial commit of catkin-ised version
+
+------------------------------------------------------------------------
+r3086 | suraj | 2015-03-09 06:08:12 +0100 (Mo, 09 Mär 2015) | 2 lines
+
+catkinized packages
+
+------------------------------------------------------------------------
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkgsebastian@Desktop12:~/catkin_ws/src/catkin-pkg$ ls
+[0m[01;34mrobotino_description[0m  [01;34mrobotino_local_planner[0m  [01;34mrobotino_navigation[0m  [01;34mrobotino_safety[0m
+[01;34mrobotino_local_move[0m   [01;34mrobotino_msgs[0m           [01;34mrobotino_node[0m        [01;34mrobotino_teleop[0m
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkgsebastian@Desktop12:~/catkin_ws/src/catkin-pkg$ ls[K[Kcd ..
+]0;sebastian@Desktop12: ~/catkin_ws/srcsebastian@Desktop12:~/catkin_ws/src$ ls 
+[0m[01;34mcatkin-pkg[0m  [01;36mCMakeLists.txt[0m
+]0;sebastian@Desktop12: ~/catkin_ws/srcsebastian@Desktop12:~/catkin_ws/src$ svn status
+svn: warning: W155007: '/home/sebastian/catkin_ws/src' is not a working copy
+]0;sebastian@Desktop12: ~/catkin_ws/srcsebastian@Desktop12:~/catkin_ws/src$ cd dc[K[Kcatkin-pkg/
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkgsebastian@Desktop12:~/catkin_ws/src/catkin-pkg$ svn sta[Katus
+M       robotino_node/CMakeLists.txt
+?       robotino_node/Robotino_Node
+!       robotino_node/include/CompactBHAROS.h
+!       robotino_node/include/GrapplerROS.h
+M       robotino_node/include/InitialPoseROS.h
+!       robotino_node/include/MappingROS.h
+!       robotino_node/include/NavGoalROS.h
+!       robotino_node/include/NorthStarROS.h
+!       robotino_node/include/RobotinoMappingNode.h
+M       robotino_node/include/RobotinoNode.h
+!       robotino_node/src/CompactBHAROS.cpp
+!       robotino_node/src/GrapplerROS.cpp
+!       robotino_node/src/MappingROS.cpp
+!       robotino_node/src/NavGoalROS.cpp
+!       robotino_node/src/NorthStarROS.cpp
+!       robotino_node/src/RobotinoMappingNode.cpp
+M       robotino_node/src/RobotinoNode.cpp
+!       robotino_node/src/robotino_mapping_node.cpp
+?       robotino_node/typescript
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkgsebastian@Desktop12:~/catkin_ws/src/catkin-pkg$ svn 
+add         cl          export      log         pdel        proplist    revert
+annotate    cleanup     -h          ls          pedit       propset     rm
+auth        co          help        merge       pget        pset        status
+blame       commit      --help      mergeinfo   plist       relocate    switch
+cat         copy        import      mkdir       praise      remove      unlock
+changelist  cp          info        move        propdel     rename      update
+checkout    delete      list        mv          propedit    resolve     upgrade
+ci          diff        lock        patch       propget     resolved    --version
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkgsebastian@Desktop12:~/catkin_ws/src/catkin-pkg$ svn of[K[K[K jre[K[K[Kinfo
+Path: .
+Working Copy Root Path: /home/sebastian/catkin_ws/src/catkin-pkg
+URL: http://svn.openrobotino.org/robotino-ros-pkg/trunk/catkin-pkg
+Relative URL: ^/robotino-ros-pkg/trunk/catkin-pkg
+Repository Root: http://svn.openrobotino.org
+Repository UUID: 4ed1f212-482f-4fe5-ac21-7313b7a48e9d
+Revision: 3616
+Node Kind: directory
+Schedule: normal
+Last Changed Author: suraj
+Last Changed Rev: 3303
+Last Changed Date: 2015-07-08 08:18:14 +0200 (Mi, 08 Jul 2015)
+
+]0;sebastian@Desktop12: ~/catkin_ws/src/catkin-pkgsebastian@Desktop12:~/catkin_ws/src/catkin-pkg$ svn 
+add         cl          export      log         pdel        proplist    revert
+annotate    cleanup     -h          ls          pedit       propset     rm
+auth        co          help        merge       pget        pset        status
+blame       commit      --help      mergeinfo   plist       relocate    switch
+cat         cop
