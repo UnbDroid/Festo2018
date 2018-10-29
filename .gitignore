@@ -5,3 +5,5 @@ logs
 
 *.urdf
 *.out
+
+\.vscode/
