@@ -4,6 +4,7 @@
 #include <sensor_msgs/image_encodings.h>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include "std_msgs/String.h"
 
 static const std::string OPENCV_WINDOW = "Image window";
 
@@ -12,6 +13,7 @@ class ImageConverter {
     image_transport::ImageTransport it_;
     image_transport::Subscriber image_sub_;
     image_transport::Publisher image_pub_;
+    ros::Publisher pubDebug;
 
    public:
     ImageConverter() : it_(nh_) {
@@ -19,6 +21,8 @@ class ImageConverter {
         image_sub_ =
             it_.subscribe("/image_raw", 1, &ImageConverter::imageCb, this);
         image_pub_ = it_.advertise("/image_converter/output_video", 1);
+
+        pubDebug = nh_.advertise<std_msgs::String>("debug", 1000);
 
         cv::namedWindow(OPENCV_WINDOW);
     }
@@ -37,6 +41,10 @@ class ImageConverter {
         // // Draw an example circle on the video stream
         // if (cv_ptr->image.rows > 60 && cv_ptr->image.cols > 60)
         //     cv::circle(cv_ptr->image, cv::Point(50, 50), 10, CV_RGB(255, 0, 0));
+
+        std_msgs::String debugMsg;
+        debugMsg.data = "teste";
+        pubDebug.publish(debugMsg);
 
         // Update GUI Window
         cv::imshow(OPENCV_WINDOW, cv_ptr->image);
