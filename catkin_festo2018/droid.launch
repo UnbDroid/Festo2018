@@ -2,4 +2,5 @@
     <include file="$(find robotino_node)/launch/robotino_node.launch" >
         <arg name="hostname" value="172.26.101.103" />
     </include>
+    <node name="vision_node" pkg="vision" type="vision_node"/>
 </launch>

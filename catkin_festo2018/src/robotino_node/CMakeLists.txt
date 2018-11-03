@@ -9,8 +9,8 @@ find_package(catkin REQUIRED COMPONENTS
   nav_msgs
   geometry_msgs
   std_msgs
-  message_generation
   tf
+  message_generation
 )
 
 set(CMAKE_MODULE_PATH /usr/local/robotino/api2/cmake)
