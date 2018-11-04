@@ -1,8 +1,14 @@
 <launch>
-    <!-- rosrun xacro \-\-inorder xacro.py robotino.urdf.xacro > robotino.urdf -->
-
-    <!-- rosrun robotino_node robotino_node.launch hostname:=IPADDRESS_OF_ROBOTINO -->
     <include file="$(find robotino_node)/launch/robotino_node.launch" >
         <arg name="hostname" value="172.26.101.103" />
     </include>
+
+    <node name="point_cloud_converter" pkg="point_cloud_converter" type="point_cloud_converter"
+            args="points_in:=/distance_sensors points2_out:=/pcloud2"/>
+
+    <!-- rosrun pointcloud_to_laserscan pointcloud_to_laserscan_node cloud_in:=pcloud2 -->
+    <node name="pointcloud_to_laserscan" pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node"
+            args="cloud_in:=pcloud2"/>
+
+    <!-- <node name="vision_node" pkg="vision" type="vision_node"/> -->
 </launch>

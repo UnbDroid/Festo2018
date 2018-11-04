@@ -25,5 +25,5 @@
   	</node>
     <node pkg="tf" type="static_transform_publisher" name="laser_camera_broadcaster" args="0.0 0 0.0 0 0 0 laser_link camera_depth_frame 50" />
   	<node pkg="tf" type="static_transform_publisher" name="laser_link_broadcaster" args="0 0 0.23 0 0 0 base_link laser_link 50" />
-  	<param name="robot_description" textfile="$(find robotino_description)/robotino.urdf" />
+  	<param name="robot_description" textfile="robotino.urdf" />
 </launch>
