@@ -78,7 +78,7 @@ int main(int argc, char **argv)
     }else{
       vel.linear.x = 0.8;
     }
-    ROS_INFO("%s", vel.linear.to_string);
+    //ROS_INFO("%s", vel.linear.to_string);
     printf("%d",distancia[0]);
     vel_pub.publish(vel);
     // for (int i = 0; i < 1000; i++){
