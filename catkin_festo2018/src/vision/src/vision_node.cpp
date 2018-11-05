@@ -4,6 +4,8 @@
 #include <sensor_msgs/image_encodings.h>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include <sstream>
+#include <iostream>
 // #include "std_msgs/String.h"
 
 static const std::string OPENCV_WINDOW = "Image window";
@@ -137,7 +139,7 @@ class ImageConverter {
                 break; 
             }
         }
-        
+
 
         // cv::imshow(OPENCV_WINDOW, cv_ptr->image);
         // cv::waitKey(3);
