@@ -5,6 +5,8 @@
 #include "geometry_msgs/Twist.h"
 #include <sstream>
 
+geometry_msgs::Point32 distancia[9];
+
 void dist(const sensor_msgs::PointCloud::ConstPtr& sensor){
 	for (int i = 0; i < 9; ++i)
 	{
