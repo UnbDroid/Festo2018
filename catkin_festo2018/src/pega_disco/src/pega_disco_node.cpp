@@ -61,21 +61,20 @@ int main(int argc, char **argv)
 
   std::stringstream ss;
   int count = 0;
-  for (int i = 0; i < 1000; i++){
-    vel.linear.x = 0.8;
-    vel.linear.y = 0;
-    ROS_INFO("%d", vel.linear.x);
-    chat_publisher.publish(vel);
-
-		ros::spinOnce();
-  }
-  for (int i = 0; i < 1000; i++){
-    vel.linear.x = 0;
-    vel.linear.y = 0.8;
-    ROS_INFO("%d", vel.linear.x);
-    chat_publisher.publish(vel);
-
-		ros::spinOnce();
+  while(ros::ok()){
+    for (int i = 0; i < 1000; i++){
+      vel.linear.x = 0.8;
+      vel.linear.y = 0;
+      ROS_INFO("%d", vel.linear.x);
+      chat_publisher.publish(vel);
+    }
+    for (int i = 0; i < 1000; i++){
+      vel.linear.x = 0;
+      vel.linear.y = 0.8;
+      ROS_INFO("%d", vel.linear.x);
+      chat_publisher.publish(vel);
+    }
+    ros::spinOnce();
   }
 
   // while (ros::ok())
