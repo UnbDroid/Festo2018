@@ -5,6 +5,13 @@
 #include "geometry_msgs/Twist.h"
 #include <sstream>
 
+void dist(const sensor_msgs::PointCloud::ConstPtr& sensor){
+	for (int i = 0; i < 9; ++i)
+	{
+		distancia[i] = sensor->points[i];
+	}
+}
+
 /**
  * This tutorial demonstrates simple sending of messages over the ROS system.
  */
@@ -50,6 +57,7 @@ int main(int argc, char **argv)
    */
   //ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
   ros::Publisher vel_pub = n.advertise<geometry_msgs::Twist>("cmd_vel", 1);
+  ros::Subscriber sub_dist = n.subscribe("distance_sensors", 10, dist);
 
   ros::Rate loop_rate(10);
 
@@ -62,18 +70,25 @@ int main(int argc, char **argv)
   std::stringstream ss;
   int count = 0;
   while(ros::ok()){
-    for (int i = 0; i < 1000; i++){
-      vel.linear.x = 0.8;
-      vel.linear.y = 0;
-      ROS_INFO("%d", vel.linear.x);
-      vel_pub.publish(vel);
-    }
-    for (int i = 0; i < 1000; i++){
+
+    if(distancia[1].x < 0.1){
       vel.linear.x = 0;
-      vel.linear.y = 0.8;
-      ROS_INFO("%d", vel.linear.x);
-      vel_pub.publish(vel);
+    }else{
+      vel.linear.x = 0.8;
     }
+    vel_pub.publish(vel);
+    // for (int i = 0; i < 1000; i++){
+    //   vel.linear.x = 0.8;
+    //   vel.linear.y = 0;
+    //   ROS_INFO("%d", vel.linear.x);
+    //   vel_pub.publish(vel);
+    // }
+    // for (int i = 0; i < 1000; i++){
+    //   vel.linear.x = 0;
+    //   vel.linear.y = 0.8;
+    //   ROS_INFO("%d", vel.linear.x);
+    //   vel_pub.publish(vel);
+    // }
     ros::spinOnce();
   }
 
