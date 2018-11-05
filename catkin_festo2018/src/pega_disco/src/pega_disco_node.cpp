@@ -73,7 +73,7 @@ int main(int argc, char **argv)
   int count = 0;
   while(ros::ok()){
 
-    if(distancia[9].x < 0.25s){
+    if(distancia[9].x < 0.25){
       vel.linear.x = 0;
     }else{
       vel.linear.x = 0.8;
