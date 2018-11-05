@@ -61,14 +61,14 @@ int main(int argc, char **argv)
 
   std::stringstream ss;
   int count = 0;
-  for (int i = 0; i < 10; i++){
-    vel.linear.x = 1;
+  for (int i = 0; i < 1000; i++){
+    vel.linear.x = 0.8;
     vel.linear.y = 0;
     ROS_INFO("%d", vel.linear.x);
   }
-  for (int i = 0; i < 10; i++){
+  for (int i = 0; i < 1000; i++){
     vel.linear.x = 0;
-    vel.linear.y = 1;
+    vel.linear.y = 0.8;
     ROS_INFO("%d", vel.linear.x);
   }
 
