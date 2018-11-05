@@ -73,11 +73,13 @@ int main(int argc, char **argv)
   int count = 0;
   while(ros::ok()){
 
-    if(distancia[0].x < 0.3){
+    if(distancia[1].x < 0.3){
       vel.linear.x = 0;
     }else{
       vel.linear.x = 0.8;
     }
+    ROS_INFO("%s", vel.linear.to_string);
+    printf("%d",distancia[0]);
     vel_pub.publish(vel);
     // for (int i = 0; i < 1000; i++){
     //   vel.linear.x = 0.8;
