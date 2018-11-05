@@ -46,7 +46,7 @@ int main(int argc, char **argv)
    * than we can send them, the number here specifies how many messages to
    * buffer up before throwing some away.
    */
-  ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
+  //ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
   ros::Publisher vel_pub = n.advertise<geometry_msgs::Twist>("cmd_vel", 1);
 
   ros::Rate loop_rate(10);
@@ -70,32 +70,32 @@ int main(int argc, char **argv)
     ROS_INFO("%d", vel.linear.x);
   }
 
-  while (ros::ok())
-  {
-    /**
-     * This is a message object. You stuff it with data, and then publish it.
-     */
-    std_msgs::String msg;
+  // while (ros::ok())
+  // {
+  //   /**
+  //    * This is a message object. You stuff it with data, and then publish it.
+  //    */
+  //   std_msgs::String msg;
 
-    std::stringstream ss;
-    ss << "hello world " << count;
-    msg.data = ss.str();
+  //   std::stringstream ss;
+  //   ss << "hello world " << count;
+  //   msg.data = ss.str();
 
-    ROS_INFO("%s", msg.data.c_str());
+  //   ROS_INFO("%s", msg.data.c_str());
 
-    /**
-     * The publish() function is how you send messages. The parameter
-     * is the message object. The type of this object must agree with the type
-     * given as a template parameter to the advertise<>() call, as was done
-     * in the constructor above.
-     */
-    chatter_pub.publish(msg);
+  //   /**
+  //    * The publish() function is how you send messages. The parameter
+  //    * is the message object. The type of this object must agree with the type
+  //    * given as a template parameter to the advertise<>() call, as was done
+  //    * in the constructor above.
+  //    */
+  //   chatter_pub.publish(msg);
 
-    ros::spinOnce();
+  //   ros::spinOnce();
 
-    loop_rate.sleep();
-    ++count;
-  }
+  //   loop_rate.sleep();
+  //   ++count;
+  // }
 
 
   return 0;
