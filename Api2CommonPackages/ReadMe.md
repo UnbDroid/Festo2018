@@ -1,0 +1,1 @@
+Copy into /usr/local/robotino/
