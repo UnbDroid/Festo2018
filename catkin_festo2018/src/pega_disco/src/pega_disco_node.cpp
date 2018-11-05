@@ -20,6 +20,8 @@ int main(int argc, char **argv)
    */
   ros::init(argc, argv, "pega_disco");
 
+  geometry_msgs::Twist vel;
+
   /**
    * NodeHandle is the main access point to communications with the ROS system.
    * The first NodeHandle constructed will fully initialize this node, and the last
@@ -45,6 +47,7 @@ int main(int argc, char **argv)
    * buffer up before throwing some away.
    */
   ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
+  ros::Publisher vel_pub = n.advertise<geometry_msgs::Twist>("cmd_vel", 1);
 
   ros::Rate loop_rate(10);
 
@@ -52,7 +55,21 @@ int main(int argc, char **argv)
    * A count of how many messages we have sent. This is used to create
    * a unique string for each message.
    */
+  std_msgs::String msg;
+
+  std::stringstream ss;
   int count = 0;
+  for (int i = 0; i < 10; i++){
+    vel.linear.x = 1;
+    vel.linear.y = 0;
+    ROS_INFO("%d", vel.linear.x);
+  }
+  for (int i = 0; i < 10; i++){
+    vel.linear.x = 0;
+    vel.linear.y = 1;
+    ROS_INFO("%d", vel.linear.x);
+  }
+
   while (ros::ok())
   {
     /**
