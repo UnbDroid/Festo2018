@@ -2,8 +2,8 @@
 #include <image_transport/image_transport.h>
 #include <ros/ros.h>
 #include <sensor_msgs/image_encodings.h>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
 #include <sstream>
 #include <iostream>
 #include "std_msgs/String.h"
@@ -77,9 +77,9 @@ class ImageConverter {
 
         // Update GUI Window
 
-        cv_ptr.read(imgTmp);
+        cv_ptr->image.read(imgTmp);
 
-        Mat imgLines = Mat::zeros( imgTmp.size(), CV_8UC3 );
+        Mat imgLines = Mat::zeros( imgTmp.size(), CV_8UC3 );;
 
         while (true) {
             Mat imgOriginal;
