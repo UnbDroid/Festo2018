@@ -108,7 +108,7 @@ class ImageConverter {
 
 
         // Update GUI Window
-        cv::imshow(OPENCV_WINDOW, imgTmp);
+        cv::imshow(OPENCV_WINDOW, imgThresholded);
         cv::waitKey(3);
 
         // Output modified video stream
