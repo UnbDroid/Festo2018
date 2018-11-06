@@ -110,11 +110,11 @@ class ImageConverter {
                 //Draw a red line from the previous point to the current point
                 line(imgLines, Point(posX, posY), Point(iLastX, iLastY), Scalar(0,0,255), 2);
             }
-
+            vel.linear.x = 0.3;
             if(posX < 245){
-                vel.linear.x = -0.7;
+                vel.linear.y = -0.7;
             }else{
-                vel.linear.x = 0.7;
+                vel.linear.y = 0.7;
             }
             chat_publisher.publish(vel);
 
