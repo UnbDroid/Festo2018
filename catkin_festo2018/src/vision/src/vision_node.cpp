@@ -6,6 +6,9 @@
 #include <opencv2/imgproc/imgproc.hpp>
 // #include "std_msgs/String.h"
 
+using namespace cv;
+using namespace std;
+
 static const std::string OPENCV_WINDOW = "Image window";
 
 class ImageConverter {
@@ -41,6 +44,35 @@ class ImageConverter {
         // Draw an example circle on the video stream
         if (cv_ptr->image.rows > 60 && cv_ptr->image.cols > 60)
             cv::circle(cv_ptr->image, cv::Point(50, 50), 10, CV_RGB(255, 0, 0));
+
+        int iLowH = 170;
+        int iHighH = 179;
+
+        int iLowS = 150; 
+        int iHighS = 255;
+
+        int iLowV = 60;
+        int iHighV = 255;
+
+        //Create trackbars in "Control" window
+        createTrackbar("LowH", "Control", &iLowH, 179); //Hue (0 - 179)
+        createTrackbar("HighH", "Control", &iHighH, 179);
+
+        createTrackbar("LowS", "Control", &iLowS, 255); //Saturation (0 - 255)
+        createTrackbar("HighS", "Control", &iHighS, 255);
+
+        createTrackbar("LowV", "Control", &iLowV, 255);//Value (0 - 255)
+        createTrackbar("HighV", "Control", &iHighV, 255);
+
+        int iLastX = -1; 
+        int iLastY = -1;
+
+        //Capture a temporary image from the camera
+        Mat imgTmp = cv_ptr->image;
+
+        //Create a black image with the size as the camera output
+        Mat imgLines = Mat::zeros( imgTmp.size(), CV_8UC3 );;
+
 
         // std_msgs::String debugMsg;
         // debugMsg.data = "teste";
