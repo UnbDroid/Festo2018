@@ -18,7 +18,7 @@ class ImageConverter {
     ros::NodeHandle nh_;
     ros::NodeHandle nh;
     ros::NodeHandle nh_pos;
-    ros::Publisher chat_publisher = nh.advertise<geometry_msgs::Twist>("pos_disco", 1);
+    ros::Publisher chat_publisher = nh.advertise<geometry_msgs::Twist>("pos_azul", 1);
     //ros::Publisher chat_publisher = nh_pos.advertise<int>("", 1);
     geometry_msgs::Twist pos;
     geometry_msgs::Twist vel;
@@ -32,8 +32,8 @@ class ImageConverter {
     image_transport::Publisher image_pub_;
     // ros::Publisher pubDebug;
 
-    int iLowH = 165;
-    int iHighH = 179;
+    int iLowH = 75;
+    int iHighH = 130;
 
     int iLowS = 140; 
     int iHighS = 255;

@@ -57,10 +57,10 @@ int main(int argc, char **argv){
 
             if(posY < perto){
                 vel.linear.x = 0.5;
-                if(posX < (145 - 2)){
+                if(posX < (169 - 6)){
                     vel.linear.x = 0;
                     vel.angular.z = 0.5;
-                }else if (posX > (145 + 2)){
+                }else if (posX > (169 + 6)){
                     vel.linear.x = 0;
                     vel.angular.z = -0.5;
                 }
@@ -69,10 +69,10 @@ int main(int argc, char **argv){
                 }
             }else{
                 vel.linear.x = 0.5;
-                if(posX < (145 - 2)){
+                if(posX < (169 - 6)){
                     vel.linear.x = 0;
                     vel.angular.z = 0.5;
-                }else if (posX > (145 + 2)){
+                }else if (posX > (169 + 6)){
                     vel.linear.x = 0;
                     vel.angular.z = -0.5;
                 }
