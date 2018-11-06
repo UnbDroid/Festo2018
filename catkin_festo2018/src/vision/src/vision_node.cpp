@@ -99,6 +99,34 @@ class ImageConverter {
             double dM10 = oMoments.m10;
             double dArea = oMoments.m00;
 
+        if (dArea > 10000)
+        {
+            //calculate the position of the ball
+            int posX = dM10 / dArea;
+            int posY = dM01 / dArea;        
+                    
+            if (iLastX >= 0 && iLastY >= 0 && posX >= 0 && posY >= 0)
+            {
+                //Draw a red line from the previous point to the current point
+                line(imgLines, Point(posX, posY), Point(iLastX, iLastY), Scalar(0,0,255), 2);
+            }
+
+            iLastX = posX;
+            iLastY = posY;
+
+            imshow("Thresholded Image", imgThresholded); //show the thresholded image
+
+            imgOriginal = imgOriginal + imgLines;
+            imshow("Original", imgOriginal); //show the original image
+
+            if (waitKey(30) == 27) //wait for 'esc' key press for 30ms. If 'esc' key is pressed, break loop
+            {
+                cout << "esc key is pressed by user" << endl;
+                break; 
+            }
+
+        }
+
             
         }
 
