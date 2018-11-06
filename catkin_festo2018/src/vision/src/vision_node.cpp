@@ -4,7 +4,7 @@
 #include <sensor_msgs/image_encodings.h>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
-// #include "std_msgs/String.h"
+#include "std_msgs/String.h"
 
 using namespace cv;
 using namespace std;
