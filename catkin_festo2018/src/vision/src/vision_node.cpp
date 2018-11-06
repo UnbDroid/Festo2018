@@ -139,6 +139,7 @@ class ImageConverter {
         // Output modified video stream
         image_pub_.publish(cv_ptr->toImageMsg());
     }
+    }
 };
 
 int main(int argc, char** argv) {
