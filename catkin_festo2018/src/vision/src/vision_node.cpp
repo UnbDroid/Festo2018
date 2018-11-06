@@ -55,23 +55,23 @@ class ImageConverter {
         int iHighV = 255;
 
         //Create trackbars in "Control" window
-        createTrackbar("LowH", "Control", &iLowH, 179); //Hue (0 - 179)
-        createTrackbar("HighH", "Control", &iHighH, 179);
+        // createTrackbar("LowH", "Control", &iLowH, 179); //Hue (0 - 179)
+        // createTrackbar("HighH", "Control", &iHighH, 179);
 
-        createTrackbar("LowS", "Control", &iLowS, 255); //Saturation (0 - 255)
-        createTrackbar("HighS", "Control", &iHighS, 255);
+        // createTrackbar("LowS", "Control", &iLowS, 255); //Saturation (0 - 255)
+        // createTrackbar("HighS", "Control", &iHighS, 255);
 
-        createTrackbar("LowV", "Control", &iLowV, 255);//Value (0 - 255)
-        createTrackbar("HighV", "Control", &iHighV, 255);
+        // createTrackbar("LowV", "Control", &iLowV, 255);//Value (0 - 255)
+        // createTrackbar("HighV", "Control", &iHighV, 255);
 
-        int iLastX = -1; 
-        int iLastY = -1;
+        // int iLastX = -1; 
+        // int iLastY = -1;
 
-        //Capture a temporary image from the camera
-        Mat imgTmp = cv_ptr->image;
+        // //Capture a temporary image from the camera
+        // Mat imgTmp = cv_ptr->image;
 
-        //Create a black image with the size as the camera output
-        Mat imgLines = Mat::zeros( imgTmp.size(), CV_8UC3 );;
+        // //Create a black image with the size as the camera output
+        // Mat imgLines = Mat::zeros( imgTmp.size(), CV_8UC3 );;
 
         // while(true){
         //     Mat imgOriginal = cv_ptr->image;
