@@ -74,9 +74,10 @@ class ImageConverter {
         // pubDebug.publish(debugMsg);
 
         // Update GUI Window
-        Mat imgTmp;
-        cv_ptr->image.read(imgTmp);
-        Mat teste = cv_ptr->image;
+        Mat imgTmp = cv_ptr->image;
+
+        Mat imgLines = Mat::zeros( imgTmp.size(), CV_8UC3 );;
+        
         cv::imshow(OPENCV_WINDOW, imgTmp);
         cv::waitKey(3);
 
