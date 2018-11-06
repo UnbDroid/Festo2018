@@ -80,6 +80,8 @@ class ImageConverter {
 
             Mat imgHSV;
 
+            imshow("Teste", imgOriginal);
+
             printf("Teste");
 
             cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
