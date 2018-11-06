@@ -130,9 +130,9 @@ class ImageConverter {
             
         }
 
-        std_msgs::String debugMsg;
-        debugMsg.data = "teste";
-        pubDebug.publish(debugMsg);
+        // std_msgs::String debugMsg;
+        // debugMsg.data = "teste";
+        // pubDebug.publish(debugMsg);
 
         // Update GUI Window
         cv::imshow(OPENCV_WINDOW, cv_ptr->image);
