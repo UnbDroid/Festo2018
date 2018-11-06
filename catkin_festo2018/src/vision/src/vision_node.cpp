@@ -15,6 +15,15 @@ class ImageConverter {
     image_transport::Publisher image_pub_;
     // ros::Publisher pubDebug;
 
+    int iLowH = 170;
+    int iHighH = 179;
+
+    int iLowS = 150; 
+    int iHighS = 255;
+
+    int iLowV = 60;
+    int iHighV = 255;
+
    public:
     ImageConverter() : it_(nh_) {
         // Subscribe to input video feed and publish output video feed
@@ -31,6 +40,7 @@ class ImageConverter {
 
     void imageCb(const sensor_msgs::ImageConstPtr& msg) {
         cv_bridge::CvImagePtr cv_ptr;
+        print(iLowH)
         try {
             cv_ptr =
                 cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
