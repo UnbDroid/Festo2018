@@ -1,12 +1,13 @@
+#include <iostream>
 #include <cv_bridge/cv_bridge.h>
 #include <image_transport/image_transport.h>
 #include <ros/ros.h>
 #include <sensor_msgs/image_encodings.h>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
-#include "std_msgs/String.h"
 #include "geometry_msgs/Point32.h"
 #include "geometry_msgs/Twist.h"
+#include <sstream>
 
 using namespace cv;
 using namespace std;
@@ -17,9 +18,9 @@ class ImageConverter {
     ros::NodeHandle nh_;
     ros::NodeHandle nh;
     ros::NodeHandle nh_pos;
-    ros::Publisher chat_publisher = nh.advertise<geometry_msgs::Twist>("cmd_vel", 1);
+    ros::Publisher chat_publisher = nh.advertise<geometry_msgs::Twist>("pos_disco", 1);
     //ros::Publisher chat_publisher = nh_pos.advertise<int>("", 1);
-
+    geometry_msgs::Twist pos;
     geometry_msgs::Twist vel;
 
 	float vel_x, vel_y;
@@ -31,13 +32,13 @@ class ImageConverter {
     image_transport::Publisher image_pub_;
     // ros::Publisher pubDebug;
 
-    int iLowH = 170;
+    int iLowH = 165;
     int iHighH = 179;
 
-    int iLowS = 150; 
+    int iLowS = 140; 
     int iHighS = 255;
 
-    int iLowV = 60;
+    int iLowV = 50;
     int iHighV = 255;
 
     int iLastX = -1; 
@@ -103,7 +104,7 @@ class ImageConverter {
         double dM10 = oMoments.m10;
         double dArea = oMoments.m00;
 
-        if (dArea > 10000)
+        if (dArea > 5000)
         {
             //calculate the position of the ball
             int posX = dM10 / dArea;
@@ -115,23 +116,9 @@ class ImageConverter {
                 line(imgLines, Point(posX, posY), Point(iLastX, iLastY), Scalar(0,0,255), 2);
             }
 
-            if(posY < perto){
-                vel.linear.x = 0.5;
-                if(posX < 245){
-                    vel.angular.z = 0.5;
-                }else{
-                    vel.angular.z = -0.5;
-                }
-            }else{
-                vel.linear.x = 0.6;
-                if(posX < 245){
-                    vel.angular.z = 0.5;
-                }else{
-                    vel.angular.z = -0.5;
-                }
-            }
-
-            chat_publisher.publish(vel);
+            pos.linear.x = posX;
+            pos.linear.y = posY;
+            chat_publisher.publish(pos);
 
             iLastX = posX;
             iLastY = posY;

@@ -4,6 +4,11 @@
 #include "geometry_msgs/Point32.h"
 #include "geometry_msgs/Twist.h"
 #include <sstream>
+#include <cv_bridge/cv_bridge.h>
+#include <image_transport/image_transport.h>
+#include <sensor_msgs/image_encodings.h>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 geometry_msgs::Point32 distancia[9];
 
@@ -73,11 +78,13 @@ int main(int argc, char **argv)
   int count = 0;
   while(ros::ok()){
 
-    if(distancia[9].x < 0.25){
+    if(distancia[0].x < 0.28){
       vel.linear.x = 0;
     }else{
-      vel.linear.x = 0.8;
+      vel.linear.x = 1;
     }
+    //ROS_INFO("%s", vel.linear.to_string);
+    printf("%f",distancia[0]);
     vel_pub.publish(vel);
     // for (int i = 0; i < 1000; i++){
     //   vel.linear.x = 0.8;
