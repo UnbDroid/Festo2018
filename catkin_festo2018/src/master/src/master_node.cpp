@@ -31,7 +31,7 @@ int main(int argc, char **argv)
     ros::Publisher est_pub = n.advertise<std_msgs::Int8>("estado", 1);
     ros::Subscriber sub_dist = n.subscribe("distance_sensors", 10, dist);
 
-    ros::Rate loop_rate(10);
+    ros::Rate loop_rate(1);
 
     std_msgs::String msg;
 

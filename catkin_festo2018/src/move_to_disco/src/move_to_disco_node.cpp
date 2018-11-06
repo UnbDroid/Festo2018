@@ -4,6 +4,8 @@
 #include "geometry_msgs/Twist.h"
 #include "std_msgs/Int8.h"
 #include <string>
+#include <unistd.h>
+
 
 #define VMed	0.08
 #define offx	VMed/4
@@ -27,6 +29,8 @@ void pos_(const geometry_msgs::Twist& msg){
 }
 
 int main(int argc, char **argv){
+
+    sleep(5);
 	ros::init(argc, argv, "desvia");
 
 	ros::NodeHandle nh;
@@ -53,9 +57,11 @@ int main(int argc, char **argv){
 
             if(posY < perto){
                 vel.linear.x = 0.5;
-                if(posX < (145 - 1)){
+                if(posX < (145 - 2)){
+                    vel.linear.x = 0;
                     vel.angular.z = 0.5;
-                }else if (posX > (145 + 1)){
+                }else if (posX > (145 + 2)){
+                    vel.linear.x = 0;
                     vel.angular.z = -0.5;
                 }
                 else{
@@ -63,12 +69,15 @@ int main(int argc, char **argv){
                 }
             }else{
                 vel.linear.x = 0.5;
-                if(posX < (145 - 1)){
+                if(posX < (145 - 2)){
+                    vel.linear.x = 0;
                     vel.angular.z = 0.5;
-                }else if (posX > (145 + 1)){
+                }else if (posX > (145 + 2)){
+                    vel.linear.x = 0;
                     vel.angular.z = -0.5;
                 }
                 else{
+                    vel.linear.x = 0.5;
                     vel.angular.z = 0;
                 }
             }
