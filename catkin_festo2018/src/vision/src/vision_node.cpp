@@ -47,7 +47,8 @@ class ImageConverter {
         // pubDebug.publish(debugMsg);
 
         // Update GUI Window
-        cv::imshow(OPENCV_WINDOW, cv_ptr->image);
+        Mat teste = cv_ptr->image;
+        cv::imshow(OPENCV_WINDOW, teste);
         cv::waitKey(3);
 
         // Output modified video stream
