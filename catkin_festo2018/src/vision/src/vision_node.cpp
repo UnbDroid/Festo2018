@@ -13,6 +13,13 @@ static const std::string OPENCV_WINDOW = "Image window";
 
 class ImageConverter {
     ros::NodeHandle nh_;
+    ros::NodeHandle nh;
+    geometry_msgs::Twist vel;
+
+    ros::Publisher chat_publisher = nh.advertise<geometry_msgs::Twist>("cmd_vel", 1);
+
+	float vel_x, vel_y;
+
     image_transport::ImageTransport it_;
     image_transport::Subscriber image_sub_;
     image_transport::Publisher image_pub_;
@@ -101,6 +108,13 @@ class ImageConverter {
                 //Draw a red line from the previous point to the current point
                 line(imgLines, Point(posX, posY), Point(iLastX, iLastY), Scalar(0,0,255), 2);
             }
+
+            if(posX < 245){
+                vel.linear.x = -0.7;
+            }else{
+                vel.linear.x = 0.7;
+            }
+            chat_publisher.publish(vel);
 
             iLastX = posX;
             iLastY = posY;
