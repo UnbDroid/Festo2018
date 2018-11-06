@@ -6,6 +6,9 @@
 #include <opencv2/imgproc/imgproc.hpp>
 // #include "std_msgs/String.h"
 
+using namespace cv;
+using namespace std;
+
 static const std::string OPENCV_WINDOW = "Image window";
 
 class ImageConverter {
