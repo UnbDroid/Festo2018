@@ -112,9 +112,9 @@ class ImageConverter {
             }
             vel.linear.x = 0.3;
             if(posX < 245){
-                vel.linear.y = -0.7;
-            }else{
                 vel.linear.y = 0.7;
+            }else{
+                vel.linear.y = -0.7;
             }
             chat_publisher.publish(vel);
 
