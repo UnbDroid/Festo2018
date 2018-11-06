@@ -17,12 +17,11 @@ geometry_msgs::Twist pos;
 int estado;
 
 void estado_(const std_msgs::Int8::ConstPtr& msg){
-	std::cout << "Stop talk that " << msg->data << std::endl;
     estado = msg->data;
 }
 
 void pos_(const geometry_msgs::Twist& msg){
-    ROS_INFO_STREAM("Subscriber velocities:"<<" linear x="<<msg.linear.x<<" linear y="<<msg.linear.y);
+    //ROS_INFO_STREAM("Subscriber velocities:"<<" linear x="<<msg.linear.x<<" linear y="<<msg.linear.y);
     pos.linear.x = msg.linear.x;
     pos.linear.y = msg.linear.y;
 }

@@ -39,10 +39,17 @@ int main(int argc, char **argv)
     int count = 0;
     std_msgs::Int8 estado;
     estado.data = 0;
+
     while(ros::ok()){
 
         if (estado.data == 0){
-            if(distancia[0].x < 0.28){
+            if(distancia[0].x > 0.28){
+                estado.data = 0;
+            }else{
+                estado.data = 1;
+            }
+        }else{
+            if(distancia[0].x > 0.28){
                 estado.data = 0;
             }else{
                 estado.data = 1;
