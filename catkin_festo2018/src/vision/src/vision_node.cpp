@@ -69,7 +69,7 @@ class ImageConverter {
 
         Mat imgHSV;
 
-        // cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
+        cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
  
         // Mat imgThresholded;
 
