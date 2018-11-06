@@ -73,6 +73,34 @@ class ImageConverter {
         //Create a black image with the size as the camera output
         Mat imgLines = Mat::zeros( imgTmp.size(), CV_8UC3 );;
 
+        while(true){
+            Mat imgOriginal = cv_ptr->image;
+
+            Mat imgHSV;
+
+            cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
+ 
+            Mat imgThresholded;
+
+            inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded); //Threshold the image
+                
+            //morphological opening (removes small objects from the foreground)
+            erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
+            dilate( imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) ); 
+
+            //morphological closing (removes small holes from the foreground)
+            dilate( imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) ); 
+            erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
+
+            //Calculate the moments of the thresholded image
+            Moments oMoments = moments(imgThresholded);
+
+            double dM01 = oMoments.m01;
+            double dM10 = oMoments.m10;
+            double dArea = oMoments.m00;
+
+            
+        }
 
         // std_msgs::String debugMsg;
         // debugMsg.data = "teste";
