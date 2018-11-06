@@ -24,6 +24,9 @@ class ImageConverter {
     int iLowV = 60;
     int iHighV = 255;
 
+    int iLastX = -1; 
+    int iLastY = -1;
+
    public:
     ImageConverter() : it_(nh_) {
         // Subscribe to input video feed and publish output video feed
@@ -40,7 +43,6 @@ class ImageConverter {
 
     void imageCb(const sensor_msgs::ImageConstPtr& msg) {
         cv_bridge::CvImagePtr cv_ptr;
-        printf("%d",iLowH);
         try {
             cv_ptr =
                 cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
@@ -56,8 +58,12 @@ class ImageConverter {
         // debugMsg.data = "teste";
         // pubDebug.publish(debugMsg);
 
+        Mat imgTmp = cv_ptr->image;
+
+        Mat imgLines = Mat::zeros( imgTmp.size(), CV_8UC3 );;
+
         // Update GUI Window
-        cv::imshow(OPENCV_WINDOW, cv_ptr->image);
+        cv::imshow(OPENCV_WINDOW, imgTmp);
         cv::waitKey(3);
 
         // Output modified video stream
