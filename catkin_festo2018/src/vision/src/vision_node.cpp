@@ -80,6 +80,8 @@ class ImageConverter {
 
             Mat imgHSV;
 
+            printf("Teste");
+
             cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
  
             Mat imgThresholded;
@@ -141,7 +143,7 @@ class ImageConverter {
         //cv::waitKey(3);
 
         // Output modified video stream
-        image_pub_.publish(cv_ptr->toImageMsg());
+        //image_pub_.publish(cv_ptr->toImageMsg());
     }
 };
 
