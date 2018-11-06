@@ -82,8 +82,6 @@ class ImageConverter {
 
             imshow("Teste", imgOriginal);
 
-            printf("Teste");
-
             cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
  
             Mat imgThresholded;
@@ -130,6 +128,7 @@ class ImageConverter {
                     cout << "esc key is pressed by user" << endl;
                     break; 
                 }
+                cv::imshow(OPENCV_WINDOW, cv_ptr->image);
 
             }
 
@@ -141,7 +140,6 @@ class ImageConverter {
         // pubDebug.publish(debugMsg);
 
         // Update GUI Window
-        //cv::imshow(OPENCV_WINDOW, cv_ptr->image);
         //cv::waitKey(3);
 
         // Output modified video stream
