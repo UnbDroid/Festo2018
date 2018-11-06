@@ -102,7 +102,7 @@ class ImageConverter {
                 line(imgLines, Point(posX, posY), Point(iLastX, iLastY), Scalar(0,0,255), 2);
             }
 
-            LastX = posX;
+            iLastX = posX;
             iLastY = posY;
         }
 
