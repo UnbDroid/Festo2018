@@ -133,7 +133,7 @@ class ImageConverter {
             }
     
 
-        cv::imshow(OPENCV_WINDOW, imgTmp);
+        //cv::imshow(OPENCV_WINDOW, imgTmp);
         cv::waitKey(3);
 
         // Output modified video stream
