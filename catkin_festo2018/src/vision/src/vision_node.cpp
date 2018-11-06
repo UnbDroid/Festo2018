@@ -79,27 +79,7 @@ class ImageConverter {
         Mat imgLines = Mat::zeros( imgTmp.size(), CV_8UC3 );;
         // Testado
 
-        while(true){
-            Mat imgOriginal;
 
-            Mat imgHSV;
-
-            cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
- 
-            Mat imgThresholded;
-
-            inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded); //Threshold the image
-            
-            //morphological opening (removes small objects from the foreground)
-            erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
-            dilate( imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) ); 
-
-            //morphological closing (removes small holes from the foreground)
-            dilate( imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) ); 
-            erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
-
-
-        }
     }
 };
 
