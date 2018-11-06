@@ -65,6 +65,48 @@ class ImageConverter {
 
         Mat imgLines = Mat::zeros( imgTmp.size(), CV_8UC3 );;
 
+        Mat imgOriginal;
+
+        Mat imgHSV;
+
+        cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
+ 
+        Mat imgThresholded;
+
+        inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded); //Threshold the image
+
+        //morphological opening (removes small objects from the foreground)
+        erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
+        dilate( imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) ); 
+
+        //morphological closing (removes small holes from the foreground)
+        dilate( imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) ); 
+        erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
+
+        //Calculate the moments of the thresholded image
+        Moments oMoments = moments(imgThresholded);
+
+        double dM01 = oMoments.m01;
+        double dM10 = oMoments.m10;
+        double dArea = oMoments.m00;
+
+        if (dArea > 10000)
+        {
+            //calculate the position of the ball
+            int posX = dM10 / dArea;
+            int posY = dM01 / dArea;        
+                    
+            if (iLastX >= 0 && iLastY >= 0 && posX >= 0 && posY >= 0)
+            {
+                //Draw a red line from the previous point to the current point
+                line(imgLines, Point(posX, posY), Point(iLastX, iLastY), Scalar(0,0,255), 2);
+            }
+
+            LastX = posX;
+            iLastY = posY;
+        }
+
+
         // Update GUI Window
         cv::imshow(OPENCV_WINDOW, imgTmp);
         cv::waitKey(3);
