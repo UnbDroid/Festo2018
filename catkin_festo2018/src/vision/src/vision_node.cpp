@@ -40,7 +40,7 @@ class ImageConverter {
 
     void imageCb(const sensor_msgs::ImageConstPtr& msg) {
         cv_bridge::CvImagePtr cv_ptr;
-        printf(iLowH);
+        printf("%d",iLowH);
         try {
             cv_ptr =
                 cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
