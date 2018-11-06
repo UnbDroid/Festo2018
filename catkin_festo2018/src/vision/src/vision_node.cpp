@@ -73,69 +73,69 @@ class ImageConverter {
         //Create a black image with the size as the camera output
         Mat imgLines = Mat::zeros( imgTmp.size(), CV_8UC3 );;
 
-        while(true){
-            Mat imgOriginal = cv_ptr->image;
+        // while(true){
+        //     Mat imgOriginal = cv_ptr->image;
 
-            Mat imgHSV;
+        //     Mat imgHSV;
 
-            cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
+        //     cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
  
-            Mat imgThresholded;
+        //     Mat imgThresholded;
 
-            inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded); //Threshold the image
+        //     inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded); //Threshold the image
                 
-            //morphological opening (removes small objects from the foreground)
-            erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
-            dilate( imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) ); 
+        //     //morphological opening (removes small objects from the foreground)
+        //     erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
+        //     dilate( imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) ); 
 
-            //morphological closing (removes small holes from the foreground)
-            dilate( imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) ); 
-            erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
+        //     //morphological closing (removes small holes from the foreground)
+        //     dilate( imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) ); 
+        //     erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
 
-            //Calculate the moments of the thresholded image
-            Moments oMoments = moments(imgThresholded);
+        //     //Calculate the moments of the thresholded image
+        //     Moments oMoments = moments(imgThresholded);
 
-            double dM01 = oMoments.m01;
-            double dM10 = oMoments.m10;
-            double dArea = oMoments.m00;
+        //     double dM01 = oMoments.m01;
+        //     double dM10 = oMoments.m10;
+        //     double dArea = oMoments.m00;
 
-            // if (dArea > 10000)
-            // {
-            //     //calculate the position of the ball
-            //     int posX = dM10 / dArea;
-            //     int posY = dM01 / dArea;        
+        //     // if (dArea > 10000)
+        //     // {
+        //     //     //calculate the position of the ball
+        //     //     int posX = dM10 / dArea;
+        //     //     int posY = dM01 / dArea;        
                         
-            //     if (iLastX >= 0 && iLastY >= 0 && posX >= 0 && posY >= 0)
-            //     {
-            //         //Draw a red line from the previous point to the current point
-            //         line(imgLines, Point(posX, posY), Point(iLastX, iLastY), Scalar(0,0,255), 2);
-            //     }
+        //     //     if (iLastX >= 0 && iLastY >= 0 && posX >= 0 && posY >= 0)
+        //     //     {
+        //     //         //Draw a red line from the previous point to the current point
+        //     //         line(imgLines, Point(posX, posY), Point(iLastX, iLastY), Scalar(0,0,255), 2);
+        //     //     }
 
-            //     iLastX = posX;
-            //     iLastY = posY;
+        //     //     iLastX = posX;
+        //     //     iLastY = posY;
 
-            //     imshow("Thresholded Image", imgThresholded); //show the thresholded image
+        //     //     imshow("Thresholded Image", imgThresholded); //show the thresholded image
 
-            //     imgOriginal = imgOriginal + imgLines;
-            //     imshow("Original", imgOriginal); //show the original image
+        //     //     imgOriginal = imgOriginal + imgLines;
+        //     //     imshow("Original", imgOriginal); //show the original image
 
-            //     if (waitKey(30) == 27) //wait for 'esc' key press for 30ms. If 'esc' key is pressed, break loop
-            //     {
-            //         cout << "esc key is pressed by user" << endl;
-            //         break; 
-            //     }
+        //     //     if (waitKey(30) == 27) //wait for 'esc' key press for 30ms. If 'esc' key is pressed, break loop
+        //     //     {
+        //     //         cout << "esc key is pressed by user" << endl;
+        //     //         break; 
+        //     //     }
 
-            // }
+        //     // }
 
             
-        }
+        // }
 
         // std_msgs::String debugMsg;
         // debugMsg.data = "teste";
         // pubDebug.publish(debugMsg);
 
         // Update GUI Window
-        //cv::imshow(OPENCV_WINDOW, cv_ptr->image);
+        cv::imshow(OPENCV_WINDOW, cv_ptr->image);
         cv::waitKey(3);
 
         // Output modified video stream
