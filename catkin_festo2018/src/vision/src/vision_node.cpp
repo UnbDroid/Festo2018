@@ -81,7 +81,7 @@ class ImageConverter {
         while (true){
             Mat imgOriginal;
 
-            mat imgHSV;
+            Mat imgHSV;
 
             cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV);
 
