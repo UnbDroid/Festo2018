@@ -15,7 +15,7 @@
 #include <string>
 #include <cmath>
 
-#define VMed	2.0
+#define VMed	4.0
 // #define offx	VMed/4
 // #define offDiag	0.03
 // #define	offS1	0.4
@@ -33,14 +33,17 @@
 // }
 
 
-
 geometry_msgs::Pose coord[2];
 float delX, delY, diag;
+
+void pega_pos(const geometry_msgs::Pose& pos){
+    coord[1] = pos;
+}
 
 void odometria(const nav_msgs::Odometry::ConstPtr& odom){
     coord[0] = odom->pose.pose;
     // std::cout << odom->pose.pose.position.x << std::endl;
-    std::cout << coord[0].position.x << "\t" << coord[0].position.y << std::endl;
+    // std::cout << coord[0].position.x << "\t" << coord[0].position.y << std::endl;
 }
 
 int main(int argc, char **argv){
@@ -52,29 +55,30 @@ int main(int argc, char **argv){
     
 
 	ros::Subscriber sub = nh.subscribe("/odom", 10, odometria);
+    ros::Subscriber ent = nh.subscribe("coord", 10, pega_pos);
 	ros::Publisher chat_publisher = nh.advertise<geometry_msgs::Twist>("cmd_vel", 1);
+    
 
     bool flag = 0;
-	float vel_x, vel_y;
+	float vel_x = 0, vel_y = 0;
     float coord_x, coord_y;
 
 	ros::Rate loop_rate(100);
-    std::cout << "Destino:" << std::endl << "  X: ";
-    std::cin >> coord_x;
-    coord[1].position.x = coord_x;
-    std::cout << coord[1].position.x;
-    std::cout << "  Y: ";
-    std::cin >> coord_y;
-    coord[1].position.y = coord_y;
-    std::cout << coord[1].position.y;
+    
+    // std::cout << "Destino:" << std::endl << "  X: ";
+    // std::cin >> coord_x;
+    // coord[1].position.x = coord_x;
+    // std::cout << "  Y: ";
+    // std::cin >> coord_y;
+    // coord[1].position.y = coord_y;
 
-	while(ros::ok()){
+	while(ros::ok() && flag == 0){
+    std::cout << coord[1].position.x << "\t" << coord[1].position.y << std::endl;
 
 
-		if((coord[0].position.x != coord[1].position.x) && (coord[0].position.y != coord[1].position.y) && flag == 0){
 			delX = coord[1].position.x - coord[0].position.x; 
 			delY = coord[1].position.y - coord[0].position.y; 
-            std::cout << coord[0].position.x << "\t" << coord[0].position.y << std::endl;
+            // std::cout << coord[0].position.x << "\t" << coord[0].position.y << std::endl;
 
             if(delX > 0 && delX < 0.0001) delX = 0;
             if(delY > 0 && delY < 0.0001) delY = 0;
@@ -82,23 +86,25 @@ int main(int argc, char **argv){
             if(delY < 0 && delY > -0.0001) delY = 0;
 
 			diag = sqrt((delX * delX) + (delY * delY));
+            if(diag == 0){
+                vel_x = 0;
+                vel_y = 0;
+            }
+            else{
+                vel_x = VMed * delX / diag;
+                vel_y = VMed * delY / diag;
+            }
             // std::cout << diag << std::endl;
 
-			vel_x = (VMed * (-delX))/diag;
-			vel_y = (VMed * (-delY))/diag;
 
 			vel.linear.x = vel_x;
 			vel.linear.y = vel_y;
 
-            // std::cout << coord[0].position.x << "\t" << vel.linear.x << std::endl;
-            // std::cout << coord[0].position.y << "\t" << vel.linear.y << std::endl;
+            std::cout << coord[0].position.x << "\t" << vel.linear.x << std::endl;
+            std::cout << coord[0].position.y << "\t" << vel.linear.y << std::endl;
 
             // std::cout << vel_x;
-            if (diag <= 0.05) flag = 1;
-		}else{
-            vel.linear.x = 0;
-			vel.linear.y = 0;
-        }
+            if (diag <= 0.1 && vel_x != 0 && vel_y != 0) flag = 1;
     
         chat_publisher.publish(vel);
 		// if((distancia[1].x < 0.3 && distancia[1].x != 0) && (distancia[8].x < 0.3 && distancia[8].x != 0)){
@@ -111,5 +117,6 @@ int main(int argc, char **argv){
 		
 
 		ros::spinOnce();
-	}
+        loop_rate.sleep();
+    }
 }

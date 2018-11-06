@@ -135,6 +135,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/navega_node.cpp)
 add_executable(navega_node src/navega.cpp)
+add_executable(coord_node src/coord.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -148,6 +149,9 @@ add_executable(navega_node src/navega.cpp)
 
 ## Specify libraries to link a library or executable target against *****
  target_link_libraries(navega_node
+   ${catkin_LIBRARIES}
+ )
+ target_link_libraries(coord_node
    ${catkin_LIBRARIES}
  )
 
