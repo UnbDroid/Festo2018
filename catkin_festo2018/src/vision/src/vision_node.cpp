@@ -33,6 +33,30 @@ class ImageConverter {
     ~ImageConverter() { cv::destroyWindow(OPENCV_WINDOW); }
 
     void imageCb(const sensor_msgs::ImageConstPtr& msg) {
+        namedWindow("Control", CV_WINDOW_AUTOSIZE); //create a window called "Control"
+
+        int iLowH = 170;
+        int iHighH = 179;
+
+        int iLowS = 150; 
+        int iHighS = 255;
+
+        int iLowV = 60;
+        int iHighV = 255;
+
+        //Create trackbars in "Control" window
+        createTrackbar("LowH", "Control", &iLowH, 179); //Hue (0 - 179)
+        createTrackbar("HighH", "Control", &iHighH, 179);
+
+        createTrackbar("LowS", "Control", &iLowS, 255); //Saturation (0 - 255)
+        createTrackbar("HighS", "Control", &iHighS, 255);
+
+        createTrackbar("LowV", "Control", &iLowV, 255);//Value (0 - 255)
+        createTrackbar("HighV", "Control", &iHighV, 255);
+
+        int iLastX = -1; 
+        int iLastY = -1;
+
         cv_bridge::CvImagePtr cv_ptr;
         try {
             cv_ptr =
