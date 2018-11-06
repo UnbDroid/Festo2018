@@ -5,6 +5,8 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include "std_msgs/String.h"
+#include "geometry_msgs/Point32.h"
+#include "geometry_msgs/Twist.h"
 
 using namespace cv;
 using namespace std;
@@ -15,6 +17,8 @@ class ImageConverter {
     ros::NodeHandle nh_;
     ros::NodeHandle nh;
     ros::Publisher chat_publisher = nh.advertise<geometry_msgs::Twist>("cmd_vel", 1);
+
+    geometry_msgs::Twist vel;
 
 	float vel_x, vel_y;
 
@@ -106,8 +110,6 @@ class ImageConverter {
                 //Draw a red line from the previous point to the current point
                 line(imgLines, Point(posX, posY), Point(iLastX, iLastY), Scalar(0,0,255), 2);
             }
-
-            geometry_msgs::Twist vel;
 
             if(posX < 245){
                 vel.linear.x = -0.7;
