@@ -90,21 +90,21 @@ class ImageConverter {
         double dM10 = oMoments.m10;
         double dArea = oMoments.m00;
 
-        // if (dArea > 10000)
-        // {
-        //     //calculate the position of the ball
-        //     int posX = dM10 / dArea;
-        //     int posY = dM01 / dArea;        
+        if (dArea > 10000)
+        {
+            //calculate the position of the ball
+            int posX = dM10 / dArea;
+            int posY = dM01 / dArea;        
                     
-        //     if (iLastX >= 0 && iLastY >= 0 && posX >= 0 && posY >= 0)
-        //     {
-        //         //Draw a red line from the previous point to the current point
-        //         line(imgLines, Point(posX, posY), Point(iLastX, iLastY), Scalar(0,0,255), 2);
-        //     }
+            if (iLastX >= 0 && iLastY >= 0 && posX >= 0 && posY >= 0)
+            {
+                //Draw a red line from the previous point to the current point
+                line(imgLines, Point(posX, posY), Point(iLastX, iLastY), Scalar(0,0,255), 2);
+            }
 
-        //     iLastX = posX;
-        //     iLastY = posY;
-        // }
+            iLastX = posX;
+            iLastY = posY;
+        }
 
 
         // Update GUI Window
