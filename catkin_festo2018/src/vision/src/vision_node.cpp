@@ -106,9 +106,9 @@ class ImageConverter {
             iLastY = posY;
         }
 
-
+        imgOriginal = imgOriginal + imgLines;
         // Update GUI Window
-        cv::imshow(OPENCV_WINDOW, imgThresholded);
+        cv::imshow(OPENCV_WINDOW, imgOriginal);
         cv::waitKey(3);
 
         // Output modified video stream
