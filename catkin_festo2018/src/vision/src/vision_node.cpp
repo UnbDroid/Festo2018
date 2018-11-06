@@ -65,7 +65,7 @@ class ImageConverter {
 
         Mat imgLines = Mat::zeros( imgTmp.size(), CV_8UC3 );;
 
-        Mat imgOriginal;
+        Mat imgOriginal = cv_ptr->image;
 
         Mat imgHSV;
 
