@@ -16,25 +16,15 @@
 #include <cmath>
 
 #define VMed	4.0
-// #define offx	VMed/4
-// #define offDiag	0.03
-// #define	offS1	0.4
-// #define	offS2	0.2
-// #define	offS7	0.2
-// #define	offS8	0.4pose&
-
-// geometry_msgs::Point32 distancia[9];
-
-// void dist(const sensor_msgs::PointCloud::ConstPtr& sensor){
-// 	for (int i = 0; i < 9; ++i)
-// 	{
-// 		distancia[i] = sensor->points[i];
-// 	}
-// }
 
 
 geometry_msgs::Pose coord[2];
 float delX, delY, diag;
+geometry_msgs::Point32 distancia[9];
+
+void dist(const sensor_msgs::PointCloud::ConstPtr& sensor){
+	for (int i = 0; i < 9; ++i) distancia[i] = sensor->points[i];
+}
 
 void pega_pos(const geometry_msgs::Pose& pos){
     coord[1] = pos;
@@ -54,14 +44,16 @@ int main(int argc, char **argv){
 	geometry_msgs::Twist vel;
     
 
-	ros::Subscriber sub = nh.subscribe("/odom", 10, odometria);
+	ros::Subscriber od = nh.subscribe("/odom", 10, odometria);
     ros::Subscriber ent = nh.subscribe("coord", 10, pega_pos);
+    ros::Subscriber sub_dist = nh.subscribe("distance_sensors", 10, dist);
 	ros::Publisher chat_publisher = nh.advertise<geometry_msgs::Twist>("cmd_vel", 1);
+    // ros::Publisher send_flag = nh.advertise<>("decisao", 1);
     
 
     bool flag = 0;
 	float vel_x = 0, vel_y = 0;
-    float coord_x, coord_y;
+    float coord_x, coord_y, real_dist;
 
 	ros::Rate loop_rate(100);
     
@@ -73,40 +65,47 @@ int main(int argc, char **argv){
     // coord[1].position.y = coord_y;
 
 	while(ros::ok() && flag == 0){
-    std::cout << coord[1].position.x << "\t" << coord[1].position.y << std::endl;
+        std::cout << coord[1].position.x << "\t" << coord[1].position.y << std::endl;
 
 
-			delX = coord[1].position.x - coord[0].position.x; 
-			delY = coord[1].position.y - coord[0].position.y; 
-            // std::cout << coord[0].position.x << "\t" << coord[0].position.y << std::endl;
+        delX = coord[1].position.x - coord[0].position.x; 
+        delY = coord[1].position.y - coord[0].position.y; 
+        // std::cout << coord[0].position.x << "\t" << coord[0].position.y << std::endl;
 
-            if(delX > 0 && delX < 0.0001) delX = 0;
-            if(delY > 0 && delY < 0.0001) delY = 0;
-            if(delX < 0 && delX > -0.0001) delX = 0;
-            if(delY < 0 && delY > -0.0001) delY = 0;
+        if(delX > 0 && delX < 0.0001) delX = 0;
+        if(delY > 0 && delY < 0.0001) delY = 0;
+        if(delX < 0 && delX > -0.0001) delX = 0;
+        if(delY < 0 && delY > -0.0001) delY = 0;
 
-			diag = sqrt((delX * delX) + (delY * delY));
-            if(diag == 0){
-                vel_x = 0;
-                vel_y = 0;
-            }
-            else{
-                vel_x = VMed * delX / diag;
-                vel_y = VMed * delY / diag;
-            }
-            // std::cout << diag << std::endl;
+        diag = sqrt((delX * delX) + (delY * delY));
+        if(diag == 0){
+            vel_x = 0;
+            vel_y = 0;
+        }
+        else{
+            vel_x = VMed * delX / diag;
+            vel_y = VMed * delY / diag;
+        }
+        // std::cout << diag << std::endl;
 
 
-			vel.linear.x = vel_x;
-			vel.linear.y = vel_y;
+        vel.linear.x = vel_x;
+        vel.linear.y = vel_y;
 
-            std::cout << coord[0].position.x << "\t" << vel.linear.x << std::endl;
-            std::cout << coord[0].position.y << "\t" << vel.linear.y << std::endl;
+        std::cout << coord[0].position.x << "\t" << vel.linear.x << std::endl;
+        std::cout << coord[0].position.y << "\t" << vel.linear.y << std::endl;
 
-            // std::cout << vel_x;
-            if (diag <= 0.1 && vel_x != 0 && vel_y != 0) flag = 1;
+        // std::cout << vel_x;
+        if (diag <= 0.1 && vel_x != 0 && vel_y != 0) flag = 1;
     
         chat_publisher.publish(vel);
+        // for(int i = 1; i < 9; ++i){
+        //     real_dist = sqrt((distancia[i].x * distancia[i].x ) + (distancia[i].y * distancia[i].y));
+        //     if(real_dist < 0.3 && real_dist != 0){
+        //         std::cout << "Sensor " << i << "\t" << real_dist << std::endl;
+        //         return 0;
+        //     }
+        // }
 		// if((distancia[1].x < 0.3 && distancia[1].x != 0) && (distancia[8].x < 0.3 && distancia[8].x != 0)){
 
 		// }

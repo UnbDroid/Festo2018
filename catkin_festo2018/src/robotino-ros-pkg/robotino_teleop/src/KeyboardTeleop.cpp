@@ -24,8 +24,8 @@ KeyboardTeleop::~KeyboardTeleop()
 
 void KeyboardTeleop::readParams( ros::NodeHandle n )
 {
-	n.param<double>("scale_linear", scale_linear_, 1.0);
-	n.param<double>("scale_angular", scale_angular_, 1.0);
+	n.param<double>("scale_linear", scale_linear_, 10.0);
+	n.param<double>("scale_angular", scale_angular_, 10.0);
 }
 
 void KeyboardTeleop::publish( double vel_x, double vel_y, double vel_omega )
@@ -76,22 +76,22 @@ void KeyboardTeleop::spin()
 		{
 		// Walking
 		case KEYCODE_W:
-			vel_x = 0.05;
+			vel_x = 10.0;
 			break;
 		case KEYCODE_S:
-			vel_x = -0.05;
+			vel_x = -10.0;
 			break;
 		case KEYCODE_A:
-			vel_y = 0.05;
+			vel_y = 10.0;
 			break;
 		case KEYCODE_D:
-			vel_y = -0.05;
+			vel_y = -10.0;
 			break;
 		case KEYCODE_Q:
-			vel_omega = 0.5;
+			vel_omega = 5;
 			break;
 		case KEYCODE_E:
-			vel_omega = -0.5;
+			vel_omega = -5;
 			break;
 
 		case KEYCODE_SPACE:
