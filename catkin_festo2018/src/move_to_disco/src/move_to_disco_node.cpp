@@ -56,29 +56,50 @@ int main(int argc, char **argv){
             int posY = int(pos.linear.y);
 
             if(posY < perto){
-                vel.linear.x = 0.5;
-                if(posX < (169 - 6)){
+                if (posX < (169 - 50)){
+                    vel.linear.y = 0;
                     vel.linear.x = 0;
-                    vel.angular.z = 0.5;
-                }else if (posX > (169 + 6)){
+                    vel.angular.z = 0.3;                   
+                }else if(posX > (169 + 50)){
+                    vel.linear.y = 0;
                     vel.linear.x = 0;
-                    vel.angular.z = -0.5;
+                    vel.angular.z = -0.3;
+                }else if(posX < (169 - 8)){
+                    vel.angular.z = 0;
+                    vel.linear.x = 0.3;
+                    vel.linear.y = 0.3;
+                }else if (posX > (169 + 8)){
+                    vel.angular.z = 0;
+                    vel.linear.x = 0.3;
+                    vel.linear.y = -0.3;
                 }
                 else{
+                    vel.linear.x = 0.3;
                     vel.angular.z = 0;
+                    vel.linear.y = 0;
                 }
             }else{
-                vel.linear.x = 0.5;
-                if(posX < (169 - 6)){
+                if (posX < (169 - 30)){
+                    vel.linear.y = 0;
                     vel.linear.x = 0;
-                    vel.angular.z = 0.5;
-                }else if (posX > (169 + 6)){
+                    vel.angular.z = 0.3;                   
+                }else if(posX > (169 + 30)){
+                    vel.linear.y = 0;
                     vel.linear.x = 0;
-                    vel.angular.z = -0.5;
+                    vel.angular.z = -0.3;
+                }else if(posX < (169 - 7)){
+                    vel.angular.z = 0;
+                    vel.linear.x = 0.3;
+                    vel.linear.y = 0.3;
+                }else if (posX > (169 + 7)){
+                    vel.angular.z = 0;
+                    vel.linear.x = 0.3;
+                    vel.linear.y = -0.3;
                 }
                 else{
-                    vel.linear.x = 0.5;
+                    vel.linear.x = 0.3;
                     vel.angular.z = 0;
+                    vel.linear.y = 0;
                 }
             }
 
