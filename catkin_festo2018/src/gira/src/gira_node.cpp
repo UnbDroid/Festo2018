@@ -82,30 +82,35 @@ int main(int argc, char **argv){
     //     }
     // }
 
-    while(ros::ok()){
-        if (ang != 0){
-            if(ang < 0){
-                angulo_destino = ang + angulo;
-                if(angulo_destino > (acos(coord[0].orientation.z)*180/3.1415)){
-                    vel.angular.z = -0.3; 
-                    vel_pub.publish(vel);
-                }
-            }else if(ang > 0){
-                angulo_destino = ang + angulo;
-                printf("%f\n",ang);
-                while(angulo_destino < (acos(coord[0].orientation.z)*180/3.1415)){
-                    printf("Angulo atual: %f\n",acos(coord[0].orientation.z)*180/3.1415);
-                    printf("Angulo destino %f\n",ang);
-                    vel.angular.z = 0.3; 
-                    vel_pub.publish(vel);
-                    //ros::spinOnce();
-                }
-            }
-            vel.angular.z = 0;
-            vel_pub.publish(vel);
-            terminou_girar.data = 1;
-            chat_publisher.publish(terminou_girar);
-        }
+    while(true){
+        printf("%f\n", coord[0].orientation.z);
         ros::spinOnce();
     }
+
+    // while(ros::ok()){
+    //     if (ang != 0){
+    //         if(ang < 0){
+    //             angulo_destino = ang + angulo;
+    //             if(angulo_destino > (acos(coord[0].orientation.z)*180/3.1415)){
+    //                 vel.angular.z = -0.3; 
+    //                 vel_pub.publish(vel);
+    //             }
+    //         }else if(ang > 0){
+    //             angulo_destino = ang + angulo;
+    //             printf("%f\n",ang);
+    //             while(angulo_destino < (acos(coord[0].orientation.z)*180/3.1415)){
+    //                 printf("Angulo atual: %f\n",acos(coord[0].orientation.z)*180/3.1415);
+    //                 printf("Angulo destino %f\n",ang);
+    //                 vel.angular.z = 0.3; 
+    //                 vel_pub.publish(vel);
+    //                 //ros::spinOnce();
+    //             }
+    //         }
+    //         vel.angular.z = 0;
+    //         vel_pub.publish(vel);
+    //         terminou_girar.data = 1;
+    //         chat_publisher.publish(terminou_girar);
+    //     }
+    //     ros::spinOnce();
+    // }
 }

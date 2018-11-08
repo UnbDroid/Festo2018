@@ -41,7 +41,7 @@ int main(int argc, char **argv){
 
 	geometry_msgs::Twist vel;
 	
-	ros::Subscriber od = nh.subscribe("/odom", 10, odometria)
+	ros::Subscriber od = nh.subscribe("/odom", 10, odometria);
 	ros::Subscriber sub = nh.subscribe("distance_sensors", 10, dist);
 	ros::Publisher chat_publisher = nh.advertise<geometry_msgs::Twist>("cmd_vel", 1);
 
@@ -59,8 +59,8 @@ int main(int argc, char **argv){
 		vel.linear.y = vel_y;
 
 		if(distancia[0].x < 0.2){//Encontra obstáculo
-			od_x = coord[0].position.x
-		        od_y = coord[0].position.y
+			od_x = coord[0].position.x;
+		    od_y = coord[0].position.y;
 			vel_x = 0;
 			vel_y = 0;
 
@@ -81,14 +81,14 @@ int main(int argc, char **argv){
 		
 		while(distancia[7].x != 0.15 && distancia[0].x > 0.2){//segue parede
 
-			if (distancia[7] <0.2){
+			if (distancia[7].x <0.2){
 				vel_x = 0.05;
 				vel_y = 0.05;
 				vel.linear.x = vel_x;
 				vel.linear.y = vel_y;
 
 			}
-			if (distancia[7]>0.1){
+			if (distancia[7].x>0.1){
 				vel_x = 0.05;
 				vel_y = -0.05;
 				vel.linear.x = vel_x;

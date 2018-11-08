@@ -20,6 +20,12 @@ void dist(const sensor_msgs::PointCloud::ConstPtr& sensor){
 	}
 }
 
+int posicoes;
+
+void posicoes_(const std_msgs::Int8::ConstPtr& msg){
+    posicoes = msg->data;
+}
+
 int main(int argc, char **argv)
 {
     ros::init(argc, argv, "pega_disco");
@@ -30,6 +36,7 @@ int main(int argc, char **argv)
 
     ros::Publisher est_pub = n.advertise<std_msgs::Int8>("estado", 1);
     ros::Subscriber sub_dist = n.subscribe("distance_sensors", 10, dist);
+    ros::Subscriber sub_pos = n.subscribe("posicoes_segue", 10, posicoes_);
 
     ros::Rate loop_rate(1);
 
@@ -38,10 +45,14 @@ int main(int argc, char **argv)
     std::stringstream ss;
     int count = 0;
     std_msgs::Int8 estado;
-    estado.data = 0;
+    estado.data = 2;
 
     while(ros::ok()){
-
+        if(estado.data == 2){
+            if(posicoes == 1){
+                estado.data == 0;
+            }
+        }
         if (estado.data == 0){
             if(distancia[0].x > 0.28){
                 estado.data = 0;
