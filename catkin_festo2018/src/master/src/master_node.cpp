@@ -119,6 +119,14 @@ int main(int argc, char **argv)
                 flag_pub.publish(estado);
                 ros::spinOnce();
             }
+        }else if(estado.data == 3){
+            if(pos.linear.x == 0 && pos.linear.y == 0){
+                vel.angular.z = 0.5;
+            }else{
+                vel.angular.z = 0;
+                estado.data = 0;
+            }
+            vel_pub.publish(vel);
         }
         else{
             if(estado.data = EntregaFinal){

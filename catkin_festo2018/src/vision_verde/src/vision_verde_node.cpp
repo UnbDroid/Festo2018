@@ -1,5 +1,4 @@
 #include <iostream>
-#include "std_msgs/Int8.h"
 #include <cv_bridge/cv_bridge.h>
 #include <image_transport/image_transport.h>
 #include <ros/ros.h>
@@ -19,8 +18,7 @@ class ImageConverter {
     ros::NodeHandle nh_;
     ros::NodeHandle nh;
     ros::NodeHandle nh_pos;
-    ros::Publisher chat_publisher = nh.advertise<geometry_msgs::Twist>("pos_disco", 1);
-    ros::Publisher achou_publisher = nh.advertise<std_msgs::Int8>("achou_disco", 1);
+    ros::Publisher chat_publisher = nh.advertise<geometry_msgs::Twist>("pos_verde", 1);
     //ros::Publisher chat_publisher = nh_pos.advertise<int>("", 1);
     geometry_msgs::Twist pos;
     geometry_msgs::Twist vel;
@@ -34,13 +32,13 @@ class ImageConverter {
     image_transport::Publisher image_pub_;
     // ros::Publisher pubDebug;
 
-    int iLowH = 165;
-    int iHighH = 179;
+    int iLowH = 35;
+    int iHighH = 100;
 
-    int iLowS = 140; 
+    int iLowS = 150; 
     int iHighS = 255;
 
-    int iLowV = 50;
+    int iLowV = 60;
     int iHighV = 255;
 
     int iLastX = -1; 
@@ -105,8 +103,7 @@ class ImageConverter {
         double dM01 = oMoments.m01;
         double dM10 = oMoments.m10;
         double dArea = oMoments.m00;
-        int posX = 0;
-        int posY = 0;
+
         if (dArea > 5000)
         {
             //calculate the position of the ball
@@ -128,11 +125,9 @@ class ImageConverter {
 
         }
 
-        chat_publisher.publish(pos);
-
         imgOriginal = imgOriginal + imgLines;
         // Update GUI Window
-        cv::imshow(OPENCV_WINDOW, imgOriginal);
+        cv::imshow(OPENCV_WINDOW, imgThresholded);
         cv::waitKey(3);
 
         // Output modified video stream
