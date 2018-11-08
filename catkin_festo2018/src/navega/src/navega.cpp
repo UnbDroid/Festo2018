@@ -25,11 +25,11 @@
 
 
 #define offx	VMed/2
-#define offDiag	0.3
-#define	offS1	0.4
-#define	offS2	0.2
-#define	offS7	0.2
-#define	offS8	0.4
+#define offDiag	3.0
+#define	offS1	4.0
+#define	offS2	2.0
+#define	offS7	2.0
+#define	offS8	4.0
 
 
 geometry_msgs::Pose coord[2];
@@ -51,6 +51,23 @@ void odometria(const nav_msgs::Odometry::ConstPtr& odom){
 
 void start(const std_msgs::Bool& strt){
     comecar = strt.data;
+}
+
+void desvia_parece(){
+    float multip_distancia[9];
+    for(size_t i = 0; i < count; i++)
+    {
+        if(distancia[i] < 0.35) multip_distancia[i] = 1;
+        else multip_distancia[i] = 0;
+    }
+    
+    vel.linear.x = 0;
+    vel.linear.y = VBaixa;
+    chat_publisher.publish(vel);
+    while(real_dist < DistSensor){
+        if((distancia[6].y < (DistSensor - 0.02))) vel.linear.y = -vel.linear.y;
+        chat_publisher.publish(vel);
+    }
 }
 
 int main(int argc, char **argv){
@@ -84,8 +101,8 @@ int main(int argc, char **argv){
     std_msgs::Bool retorno;
 
 	ros::Rate loop_rate(100);
+    flag = 0;
     while(ros::ok()){
-        flag = 0;
         
         terminou = 0;
         retorno.data = terminou;
@@ -159,34 +176,23 @@ int main(int argc, char **argv){
                 real_dist_ZERO = sqrt((distancia[0].x * distancia[0].x ) + (distancia[0].y * distancia[0].y));
                 if(i == 0){ // Ignorar quando estiver com disco
                     // if(real_dist < DistComDisco);
-                    /*else*/ if(real_dist < DistSensorZero && real_dist != 0){
-                        std::cout << "Sensor " << i << "\t" << real_dist << std::endl;
-                        vel.linear.x = 0;
-                            vel.linear.y = 0;
-                        chat_publisher.publish(vel);
-                        desvia = 1;
-                    }
-                    else desvia = 0;
+                    // /*else*/ if(real_dist < DistSensorZero && real_dist != 0){
+                    //     std::cout << "Sensor " << i << "\t" << real_dist << std::endl;
+                    //     vel.linear.x = 0;
+                    //     vel.linear.y = 0;
+                    //     chat_publisher.publish(vel);
+                    //     desvia = 1;
+                    // }
+                    // else desvia = 0;
                 }
-                else{
+                else if(i < 3 || i > 6){
                     if(real_dist < DistSensor && real_dist != 0){
                         if((distancia[i].x > 0 && vel_x > 0) || (distancia[i].y > 0 && vel_y > 0)){
                             std::cout << "Sensor " << i << "\t" << real_dist << "  " << real_dist_ZERO << std::endl;
-                            vel.linear.x = 0;
-                            vel.linear.y = 0;
-                            chat_publisher.publish(vel);
-                            desvia = 1;
+                            desvia_parece();
                         }
                     }
-                    else desvia = 0;
                 }
-            }
-            if (desvia == 1){
-                vel_x = VMed - offx * distancia[0].x - offDiag * distancia[8].x - offDiag * distancia[1].x;
-		        vel_y = -offS1 * distancia[1].y - offS2 * distancia[2].y + offS8 * distancia[8].y + offS7 * distancia[7].y;
-                vel.linear.x = vel_x;
-                            vel.linear.y = vel_y;
-                            chat_publisher.publish(vel);
             }
             
 

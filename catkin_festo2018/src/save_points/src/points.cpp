@@ -62,8 +62,7 @@ int main(int argc, char **argv){
     coord[0].orientation.z = 0.001;
 
     coord[1].position.x = 1.5;
-    coord[1].position.y = -0.5;
-    coord[1].orientation.z = 0.001;
+    coord[1].position.y = -0.01;
 
     int dist_real[QtdPegarPuck], menor_dist, dest_final;
     std_msgs::Bool iniciar, navegar;

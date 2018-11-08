@@ -1,16 +1,14 @@
 <launch>
     <include file="$(find robotino_node)/launch/robotino_node.launch" >
         <arg name="hostname" value="172.26.101.103" />
-	<param name="max_linear_vel" value="1.0"/>
-	<param name="min_linear_vel" value="-1.0"/>
+	<param name="max_linear_vel" value="10.0"/>
+	<param name="min_linear_vel" value="-10.0"/>
     </include>
 
     <!--node name="point_cloud_converter" pkg="point_cloud_converter" type="point_cloud_converter"
             args="points_in:=/distance_sensors points2_out:=/pcloud2"/-->
 
-    <node name="master" pkg="master" type="master_node"/>
-
-	<node name="segue_parede" pkg="segue_parede" type="segue_parede_node"/>
+    
 
 
 

@@ -71,10 +71,10 @@ int main(int argc, char **argv){
 	std_msgs::Int8 contador_posicoes;
 	contador_posicoes.data = 0;
 	while(ros::ok()){
-		if(estado == 2){
+		// if(estado == 2){
 			if(move_direita == 1 || move_esquerda == 1 || move_frente == 1){
 				if(move_direita == 1){
-					if (distancia[0].x > 0.4){
+					if (distancia[0].x > 0.5){
 						//printf("1");
 						vel_x = 0.5;
 						vel_y = 0;
@@ -108,7 +108,7 @@ int main(int argc, char **argv){
 						vel_y = 0;
 					}
 				}
-			}else if(distancia[0].x < 0.40){
+			}else if(distancia[0].x < 0.50){
 				vel_x = 0;
 				if(distancia[2].y < 0.3){
 					if(distancia[7].x > 0.05){
@@ -135,8 +135,25 @@ int main(int argc, char **argv){
 			vel.linear.y = vel_y;
 	
 			chat_publisher.publish(vel);
-		}
+		// }
 
+		if(contador_posicoes.data == 1){
+			float atual, novo, delta;
+			atual = coord[0].orientation.z;
+			if (atual < 0) atual = -atual;
+			do{
+				novo = coord[0].orientation.z;
+				delta = novo - atual;
+				std::cout << delta << std::endl;
+				vel.linear.x = 0;
+				vel.linear.y = 0;
+				vel.angular.z = -1.0;
+			chat_publisher.publish(vel);
+				ros::spinOnce();
+			}while(delta < atual/2);
+				vel.angular.z = 0;
+
+		}
 		ros::spinOnce();
 	}
 
