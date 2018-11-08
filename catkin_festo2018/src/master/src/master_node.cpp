@@ -12,12 +12,20 @@
 #include "std_msgs/Int8.h"
 
 geometry_msgs::Point32 distancia[9];
+geometry_msgs::Twist pos;
+
 
 void dist(const sensor_msgs::PointCloud::ConstPtr& sensor){
 	for (int i = 0; i < 9; ++i)
 	{
 		distancia[i] = sensor->points[i];
 	}
+}
+
+void pos_(const geometry_msgs::Twist& msg){
+    //ROS_INFO_STREAM("Subscriber velocities:"<<" linear x="<<msg.linear.x<<" linear y="<<msg.linear.y);
+    pos.linear.x = msg.linear.x;
+    pos.linear.y = msg.linear.y;
 }
 
 int posicoes;
@@ -35,8 +43,10 @@ int main(int argc, char **argv)
     geometry_msgs::Twist vel;
 
     ros::Publisher est_pub = n.advertise<std_msgs::Int8>("estado", 1);
-    ros::Subscriber sub_dist = n.subscribe("distance_sensors", 10, dist);
-    ros::Subscriber sub_pos = n.subscribe("posicoes_segue", 10, posicoes_);
+    ros::Subscriber sub_dist = n.subscribe("distance_sensors", 1, dist);
+    ros::Subscriber sub_pos = n.subscribe("posicoes_segue", 1, posicoes_);
+    ros::Subscriber sub = n.subscribe("pos_disco", 10, &pos_);
+    ros::Publisher vel_pub = n.advertise<geometry_msgs::Twist>("cmd_vel", 1);
 
     ros::Rate loop_rate(1);
 
@@ -50,7 +60,9 @@ int main(int argc, char **argv)
     while(ros::ok()){
         if(estado.data == 2){
             if(posicoes == 1){
-                estado.data == 0;
+                estado.data == 3;
+            }else{
+                estado.data = 2;
             }
         }
         if (estado.data == 0){
@@ -59,12 +71,20 @@ int main(int argc, char **argv)
             }else{
                 estado.data = 1;
             }
-        }else{
+        }else if (estado.data == 1){
             if(distancia[0].x > 0.28){
                 estado.data = 0;
             }else{
                 estado.data = 1;
             }
+        }else if(estado.data == 3){
+            if(pos.linear.x == 0 && pos.linear.y == 0){
+                vel.angular.z = 0.5;
+            }else{
+                vel.angular.z = 0;
+                estado.data = 0;
+            }
+            vel_pub.publish(vel);
         }
 
         est_pub.publish(estado);

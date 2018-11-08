@@ -14,6 +14,7 @@
 #include "std_msgs/Int8.h"
 #include <string>
 #include <cmath>
+#include <unistd.h>
 
 
 geometry_msgs::Pose coord[2];
@@ -73,24 +74,31 @@ int main(int argc, char **argv){
 		if(estado == 2){
 			if(move_direita == 1 || move_esquerda == 1 || move_frente == 1){
 				if(move_direita == 1){
-					if (distancia[0].x > 0.5){
+					if (distancia[0].x > 0.4){
+						//printf("1");
 						vel_x = 0.5;
 						vel_y = 0;
 						if(distancia[1].x < 0.35){
 							vel_y = - 0.5;
 							flag = 1;
-						}else if(flag == 1){
+						}
+						
+					}else{
+						//printf("2");
+						if(flag == 0){
+							vel_x = 0;
+							vel_y = -0.5;
+						}else{
 							vel_y = 0;
 							flag = 0;
-							if (distancia[0].x < 0.4)
-								move_direita = 0;
-								contador_posicoes.data = contador_posicoes.data + 1;
-								posicoes.publish(contador_posicoes);
-								printf("%d", contador_posicoes.data);
+							printf("Entrou!\n");
+							move_direita = 0;
+							contador_posicoes.data = 1;
+							posicoes.publish(contador_posicoes);
+							printf("%d", contador_posicoes.data);
+							sleep(5);
+							
 						}
-					}else{
-						vel_x = 0;
-						vel_y = -0.5;
 					}
 				}else if(move_esquerda == 1){
 					vel_x = 0;
@@ -125,7 +133,7 @@ int main(int argc, char **argv){
 			
 			vel.linear.x = vel_x;
 			vel.linear.y = vel_y;
-
+	
 			chat_publisher.publish(vel);
 		}
 
