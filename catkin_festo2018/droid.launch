@@ -5,12 +5,12 @@
 	<param name="min_linear_vel" value="-10.0"/>
     </include>
 
-    <node name="point_cloud_converter" pkg="point_cloud_converter" type="point_cloud_converter"
-            args="points_in:=/distance_sensors points2_out:=/pcloud2"/>
+    <!--node name="point_cloud_converter" pkg="point_cloud_converter" type="point_cloud_converter"
+            args="points_in:=/distance_sensors points2_out:=/pcloud2"/-->
 
     <!-- rosrun pointcloud_to_laserscan pointcloud_to_laserscan_node cloud_in:=pcloud2 -->
-    <node name="pointcloud_to_laserscan" pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node"
-            args="cloud_in:=pcloud2"/>
+    <!--node name="pointcloud_to_laserscan" pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node"
+            args="cloud_in:=pcloud2"/-->
 
     <!-- <node name="vision_node" pkg="vision" type="vision_node"/> -->
 </launch>
