@@ -16,7 +16,7 @@
 
 geometry_msgs::Point32 distancia[9];
 std_msgs::Int8 estado;
-bool iniciar, fim_nav, com_disco, tempo_acabando, disco_proc, entregou_disc;
+bool iniciar, fim_nav, com_disco, tempo_acabando, disco_proc, entregou_disc, navegar;
 
 //---------------------Estados-----------------------------
 /*  Estado 0: Retorna base
@@ -103,15 +103,23 @@ int main(int argc, char **argv)
         }
         else if(com_disco && !fim_nav){
             estado.data = VaEntregaFinal;
+            navegar.data = 1;
+            start_nav.publish(navegar);
         }
         else if(com_disco && fim_nav){
             estado.data = EntregaFinal;
+            navegar.data = 0;
+            start_nav.publish(navegar);
         }
         else if(!com_disco && !fim_nav){
             estado.data = VaPegarMaquina;
+            navegar.data = 1;
+            start_nav.publish(navegar);
         }
         else if(!com_disco && fim_nav){
             estado.data = PegarMaquina;
+            navegar.data = 0;
+            start_nav.publish(navegar);
         }
     
         if(!fim_nav){

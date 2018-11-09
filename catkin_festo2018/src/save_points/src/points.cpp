@@ -25,12 +25,13 @@ geometry_msgs::Pose coord_odom, coord[NumPos];
         
         Caso haja processamento:
             Posição 0: início
-            Posições 1 e 2: pegar
-            Posições 3 a 5: processamento
+            Posições 1 a 3: pegar
+            Posições 4 e 5: processamento
             Posição 6: entrega
     */
 int dest_desejado;
 int key, cons, salvando = 1;
+bool init_pega_disco = 0;
 
 std_msgs::Int8 coord_enviada;
 
@@ -56,6 +57,7 @@ int main(int argc, char **argv){
     ros::Publisher destino = nh.advertise<geometry_msgs::Pose>("destino", 1);
     ros::Publisher start_nav = nh.advertise<std_msgs::Bool>("init_nav", 1);
     ros::Publisher ready = nh.advertise<std_msgs::Bool>("ready", 100);
+    ros::Publisher pega_disco = nh.advertise<std_msgs::Bool>("disco", 100);
 
     coord[0].position.x = 0.01;
     coord[0].position.y = 0.01;
@@ -89,9 +91,9 @@ int main(int argc, char **argv){
         ros::spinOnce();
     }
     navegar.data = 1;
+    start_nav.publish(navegar);
 
     while(ros::ok() && salvando == 0){
-    start_nav.publish(navegar);
     if(dest_desejado == 0) dest_final = dest_desejado;
     else if(dest_final == 2) dest_final = EntregaFinal;
     else if(dest_final == 1){

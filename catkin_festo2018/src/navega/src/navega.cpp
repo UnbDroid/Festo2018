@@ -126,6 +126,10 @@ int main(int argc, char **argv){
             std::cout << comecar << std::endl;
             ros::spinOnce();
         }
+
+        terminou = 0;
+        retorno.data = terminou;
+        end_nav.publish(retorno);
         std::cout << "OK!" << std::endl;
         std::cout << coord[1] << std::endl;
     //------------------- Começa navegação -----------------------
@@ -220,6 +224,7 @@ int main(int argc, char **argv){
     terminou = 1;
     retorno.data = terminou;
     end_nav.publish(retorno);
+
     ros::spinOnce();
     }
 }
