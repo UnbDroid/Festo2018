@@ -1,8 +1,12 @@
 #include "ros/ros.h"
+#include "nav_msgs/Odometry.h"
 #include "sensor_msgs/PointCloud.h"
 #include "geometry_msgs/Point32.h"
 #include "geometry_msgs/Twist.h"
+#include "geometry_msgs/Pose.h"
 #include "std_msgs/Int8.h"
+#include <math.h>
+#include <math.h>
 #include <string>
 #include <unistd.h>
 
@@ -16,6 +20,8 @@
 #define	offS8	0.4
 
 geometry_msgs::Twist pos;
+geometry_msgs::Point32 distancia[9];
+geometry_msgs::Pose coord[2];
 int estado;
 
 void estado_(const std_msgs::Int8::ConstPtr& msg){
@@ -28,9 +34,20 @@ void pos_(const geometry_msgs::Twist& msg){
     pos.linear.y = msg.linear.y;
 }
 
+void dist(const sensor_msgs::PointCloud::ConstPtr& sensor){
+	for (int i = 0; i < 9; ++i)
+	{
+		distancia[i] = sensor->points[i];
+	}
+}
+
+void odometria(const nav_msgs::Odometry::ConstPtr& odom){
+    coord[0] = odom->pose.pose;
+}
+
 int main(int argc, char **argv){
 
-    sleep(5);
+    sleep(3);
 	ros::init(argc, argv, "desvia");
 
 	ros::NodeHandle nh;
@@ -40,58 +57,64 @@ int main(int argc, char **argv){
 
 	ros::Subscriber sub = nh.subscribe("pos_disco", 10, &pos_);
 	ros::Publisher vel_pub = nh.advertise<geometry_msgs::Twist>("cmd_vel", 1);
+    ros::Subscriber od = nh.subscribe("/odom", 1000, odometria);
 
     ros::Subscriber sub_est = nh.subscribe("estado", 10, estado_);
 
 	float vel_x, vel_y;
 
-    int perto = 0;
+    int perto = 190, virou_depois = 0, virou_antes = 0, pega_odom = 0;
 
 	ros::Rate loop_rate(10);
 
+    float z_inicial, w_inicial;
+
 	while(ros::ok()){
 
-        if(estado == 0){
+        //if(estado == 0){
             int posX = int(pos.linear.x);
             int posY = int(pos.linear.y);
 
-            if(posY < perto){
-                if (posX < (169 - 50)){
-                    vel.linear.y = 0;
+            if(posY > perto){
+                if(virou_depois == 0){
+                    vel.angular.z = -0.5;
                     vel.linear.x = 0;
-                    vel.angular.z = 0.3;                   
-                }else if(posX > (169 + 50)){
                     vel.linear.y = 0;
-                    vel.linear.x = 0;
-                    vel.angular.z = -0.3;
-                }else if(posX < (169 - 8)){
-                    vel.angular.z = 0;
-                    vel.linear.x = 0.3;
-                    vel.linear.y = 0.3;
-                }else if (posX > (169 + 8)){
-                    vel.angular.z = 0;
-                    vel.linear.x = 0.3;
-                    vel.linear.y = -0.3;
-                }
-                else{
-                    vel.linear.x = 0.3;
-                    vel.angular.z = 0;
-                    vel.linear.y = 0;
+                    if ((z_inicial - coord[0].orientation.z < 0.1) && (w_inicial - coord[0].orientation.w < 0.1)){
+                        vel.angular.z = 0;
+                        virou_depois = 1;
+                        virou_antes = 0;
+                        pega_odom = 0;
+                    }
                 }
             }else{
-                if (posX < (169 - 30)){
+                if (virou_antes == 0){
+                    if (posX == 0 && posY == 0){
+                        if(pega_odom == 0){
+                            z_inicial = coord[0].orientation.z;
+                            w_inicial = coord[0].orientation.w; 
+                            pega_odom = 1;
+                        }
+                        vel.angular.z = -0.5;
+                    }else{
+                        vel.angular.z = 0;
+                        virou_antes = 1;
+                    }
+                }
+                virou_depois = 0;
+                if (posX < (157 - 30)){
                     vel.linear.y = 0;
                     vel.linear.x = 0;
                     vel.angular.z = 0.3;                   
-                }else if(posX > (169 + 30)){
+                }else if(posX > (157 + 30)){
                     vel.linear.y = 0;
                     vel.linear.x = 0;
                     vel.angular.z = -0.3;
-                }else if(posX < (169 - 7)){
+                }else if(posX < (157 - 7)){
                     vel.angular.z = 0;
                     vel.linear.x = 0.3;
                     vel.linear.y = 0.3;
-                }else if (posX > (169 + 7)){
+                }else if (posX > (157 + 7)){
                     vel.angular.z = 0;
                     vel.linear.x = 0.3;
                     vel.linear.y = -0.3;
@@ -104,7 +127,7 @@ int main(int argc, char **argv){
             }
 
             vel_pub.publish(vel);
-        }
+        //}
 
 
 		// vel_x = VMed - offx * distancia[0].x - offDiag * distancia[8].x - offDiag * distancia[1].x;

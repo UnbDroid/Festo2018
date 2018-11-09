@@ -8,10 +8,11 @@
     <!--node name="point_cloud_converter" pkg="point_cloud_converter" type="point_cloud_converter"
             args="points_in:=/distance_sensors points2_out:=/pcloud2"/-->
 
-    <node name="master" pkg="master" type="master_node"/>
+    <!-- <node name="master" pkg="master" type="master_node"/> -->
 
-	<node name="segue_parede" pkg="segue_parede" type="segue_parede_node"/>
+    <!-- <node name="segue_parede" pkg="segue_parede" type="segue_parede_node"/> -->
 
+ 
 
 
     <!-- rosrun pointcloud_to_laserscan pointcloud_to_laserscan_node cloud_in:=pcloud2 -->

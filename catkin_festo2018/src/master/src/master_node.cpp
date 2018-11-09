@@ -120,13 +120,13 @@ int main(int argc, char **argv)
                 ros::spinOnce();
             }
         }else if(estado.data == 3){
-            if(pos.linear.x == 0 && pos.linear.y == 0){
-                vel.angular.z = 0.5;
-            }else{
-                vel.angular.z = 0;
-                estado.data = 0;
-            }
-            vel_pub.publish(vel);
+            // if(pos.linear.x == 0 && pos.linear.y == 0){
+            //     vel.angular.z = 0.5;
+            // }else{
+            //     vel.angular.z = 0;
+            //     estado.data = 0;
+            // }
+            // vel_pub.publish(vel);
         }
         else{
             if(estado.data = EntregaFinal){
