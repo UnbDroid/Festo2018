@@ -16,15 +16,16 @@
 #include <string>
 #include <cmath>
 
-#define VMed	            7.0
+#define VMed	            0.15
 #define VRot                1.0
-#define VBaixa	            3.0
-#define DistSensor          0.25
+#define VBaixa	            0.12
+#define DistSensor          0.38
+#define DistSensorFrente    0.35
 #define DistSensorZero      0.35
 #define DistComDisco        0.28
 
 
-#define offx	VMed/2
+#define offx	0.4
 #define offDiag	3.0
 #define	offS1	4.0
 #define	offS2	2.0
@@ -53,21 +54,28 @@ void start(const std_msgs::Bool& strt){
     comecar = strt.data;
 }
 
-void desvia_parece(){
-    float multip_distancia[9];
-    for(size_t i = 0; i < count; i++)
-    {
-        if(distancia[i] < 0.35) multip_distancia[i] = 1;
-        else multip_distancia[i] = 0;
-    }
-    
-    vel.linear.x = 0;
-    vel.linear.y = VBaixa;
-    chat_publisher.publish(vel);
-    while(real_dist < DistSensor){
-        if((distancia[6].y < (DistSensor - 0.02))) vel.linear.y = -vel.linear.y;
+void desvia_parede(ros::Publisher chat_publisher, geometry_msgs::Twist vel){
+    float multip_distancia[9], real_dist[9], vel_x, vel_y;
+    int passa = 0, sentido = 1;
+    float dist_anterior, dist_atual;
+    dist_anterior = distancia[2].y;
+    do{
+        for(int i = 0; i < 9; i++)
+        {
+            if(i == 0 || i == 1 || i == 2 || i == 7 || i == 8){
+                real_dist[i] = sqrt((distancia[i].x * distancia[i].x ) + (distancia[i].y * distancia[i].y));
+                if(real_dist[i] < DistSensorFrente) multip_distancia[i] = 0.1;
+                else multip_distancia[i] = 0;
+            }
+        }
+        vel.linear.x = 0;
+        vel.linear.y = sentido * VBaixa;
         chat_publisher.publish(vel);
-    }
+        dist_atual = distancia[2].y;
+        if((dist_atual - dist_anterior)) sentido = -1;
+        chat_publisher.publish(vel);
+        ros::spinOnce();
+    }while(distancia[1].x < 0.3 && distancia[8].x < 0.3);
 }
 
 int main(int argc, char **argv){
@@ -142,9 +150,9 @@ int main(int argc, char **argv){
                 vel_y = 0;
             }
             else{
-                if((!(delX > 0 && delX < 0.00001) || !(delX < 0 && delX > -0.00001)) )vel_x = vel_diag * delX / diag;
+                if((!(delX > 0 && delX < 0.01) || !(delX < 0 && delX > -0.01)) )vel_x = vel_diag * delX / diag;
                 else vel_x = 0;
-                if((!(delY > 0 && delY < 0.00001) || !(delY < 0 && delY > -0.00001)) )vel_y = vel_diag * delY / diag;
+                if((!(delY > 0 && delY < 0.01) || !(delY < 0 && delY > -0.01)) )vel_y = vel_diag * delY / diag;
                 else vel_y = 0;
             }
             std::cout << "vel_diag: " << vel_diag << std::endl;
@@ -185,11 +193,11 @@ int main(int argc, char **argv){
                     // }
                     // else desvia = 0;
                 }
-                else if(i < 3 || i > 6){
+                else if((i == 0 && real_dist > DistComDisco) < 3 || i > 6){
                     if(real_dist < DistSensor && real_dist != 0){
                         if((distancia[i].x > 0 && vel_x > 0) || (distancia[i].y > 0 && vel_y > 0)){
                             std::cout << "Sensor " << i << "\t" << real_dist << "  " << real_dist_ZERO << std::endl;
-                            desvia_parece();
+                            desvia_parede(chat_publisher, vel);
                         }
                     }
                 }
