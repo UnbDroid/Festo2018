@@ -11,6 +11,7 @@
     
 
 
+ 
 
     <!-- rosrun pointcloud_to_laserscan pointcloud_to_laserscan_node cloud_in:=pcloud2 -->
     <!--node name="pointcloud_to_laserscan" pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node"
